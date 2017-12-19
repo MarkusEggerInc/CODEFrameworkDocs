@@ -2,9 +2,9 @@
 
 CODE Framework allows for the creation of various types of services, including REST services with JSON data structures.
 
-Note that in the CODE Framework paradigm, services are created in a very generic fashion. The same service may then be hosted in various ways, such as WCF, ASP.NET, or WebApi. However, the way the service is created doesn't change.
+Note that in the CODE Framework paradigm, services are created in a very generic fashion. The same service may then be hosted in various ways, such as WCF, ASP.NET, WebApi, or .NET Core. However, the way the service is created doesn't change.
 
-One of the unique features of CODE Framework is that services can be created that are hosted as SOAP as well as REST (and other) standards. This is unusual, because most services in .NET are either created for WCF, or for another technology such as WebApi. The approaches in doing so are drastically different. Not so if you use CODE Framework.
+One of the unique features of CODE Framework is that services can be created that are hosted as REST as well as binary (and other) standards. This is unusual, because most services in .NET are either created for WCF, or for another technology such as WebApi. The approaches in doing so are drastically different. Not so if you use CODE Framework.
 
 Let's consider a basic service definition:
 
@@ -22,11 +22,11 @@ public interface ICustomerService
 }
 ```
 
-This service definition looks very much like a WCF service. And it is true that this service can be implemented as a WCF service and hosted as a SOAP service. However, there is nothing in this service that forces it to be WCF hosted. In CODE Framework, this very service can be hosted in WebApi as a REST service (see also: [WebApi Service Hosting](WebApi#20Service%20Hosting)).
+This service definition looks very much like a WCF service. And it is true that this service _can_ be implemented as a WCF service and hosted as a SOAP, TCP/IP, or other service. However, there is nothing in this service that forces it to be WCF hosted. In CODE Framework, this very service can be hosted in WebApi as a REST service (see also: [WebApi Service Hosting](WebApi#20Service%20Hosting)) or a .NET Core Service (even deployed to Docker and all kinds of other things).
 
 The question is: What would a service like this look like if accessed using REST? 
 
-Well, that's debatable. There is no automatic answer that leads to a really satisfying result from a REST point-of-view. However, the service could be hosted in a way where every method becomes accessible using an HTTP POST operation, posting the input message ("parameter") as the payload in JSON format. In fact, that is the default CODE Framework applies. Hence if this service is hosted as REST, either in one of the CODE Framework hosts (development or runtime), or in WebApi, all these operations will be REST callable. Not the most elegant of solutions, but at least it works.
+Well, that's debatable. There is no automatic answer that leads to a really satisfying result from a REST point-of-view. However, the service could be hosted in a way where every method becomes accessible using an HTTP POST operation, posting the input message ("parameter") as the payload in JSON format. In fact, that is the default CODE Framework applies. Hence if this service is hosted as REST, either in one of the CODE Framework hosts (development or runtime), or in WebApi, all these operations will be REST callable. Not the most elegant of solutions (and we will improve on this if you keep reading), but at least it works.
 
 ## Designing for REST
 
@@ -37,7 +37,7 @@ We can improve on the above scenario by giving CODE Framework some hints as to h
 GetCustomerResponse GetCustomer(GetCustomerRequest request);
 ```
 
-The GetCustomer() operation is designed to return a customer by some kind of identifier (such as the name or the customer ID). By default, it would be exposed on a URL like this:
+The GetCustomer() operation is designed to return a customer by some kind of identifier (such as the name or the customer ID which is part of the request parameter/object/message). By default, it would be exposed on a URL like this (which you could post the input message/parameter/object to):
 
 ```c#
 http://mydomain.com/Customer/GetCustomer
@@ -56,7 +56,7 @@ public class GetCustomerRequest
 }
 ```
 
-Note: The DataContract and DataMember attributes are often considered to be "WCF Attributes". However, they are really just serialization attributes and are perfectly fine to use, even if the service has nothing to do with WCF.
+_Note: The DataContract and DataMember attributes are often considered to be "WCF Attributes". However, they are really just serialization attributes and are perfectly fine to use, even if the service has nothing to do with WCF._
 
 In a typical REST world, we would now like to call this service using a GET operation (which means we could simply type the URL into a browser) like this:
 
@@ -74,9 +74,9 @@ How can we adorn our service so CODE Framework knows that this is what we want t
 GetCustomerResponse GetCustomer(GetCustomerRequest request);
 ```
 
-This uses a custom attribute provided by CODE Framework, called "Rest". The Rest attribute has several parameters. For one, we are setting the "Method" (also known as the "HTTP Verb") to GET. Secondly, we are setting the REST-exposed name of the operation to an empty string. This tells the system that we do not want the /GetCustomer/ part of the URL and completely omit the method name.
+This uses a custom attribute provided by CODE Framework, called "Rest" (which can also be applied to non-REST services, but it would be completely ignored there). The Rest attribute has several parameters. For one, we are setting the "Method" (also known as the "HTTP Verb") to GET. Secondly, we are setting the REST-exposed name of the operation to an empty string. This tells the system that we do not want the /GetCustomer/ part of the URL and completely omit the method name.
 
-Note: You can set the REST-exposed name of the operation to anything you want. If this attribute is not set, the default method name will be used. If it is set to an empty string, the name will be completely omitted from the URL (this can only done once per HTTP Method, otherwise, the system will fail to identify the correct method). Or, you can of course choose to expose the method as anything you want for instance, using this attribute:
+Note that you can set the REST-exposed name of the operation to anything you want. If this attribute is not set, the default method name will be used. If it is set to an empty string, the name will be completely omitted from the URL (this can only done once per HTTP Method, otherwise, the system will fail to identify the correct method). Or, you can of course choose to expose the method as anything you want for instance, using this attribute:
 
 ```c#
 [Rest(Method = RestMethods.Get, Name = "Hello")]
@@ -131,7 +131,7 @@ http://mydomain.com/Customer/1234/true
 
 Note that if the second parameter is not provided on the URL, the default value for the parameter (false in this case) is assumed.
 
-_Note: When hosting this service in WebApi, you need to make sure that the routing configuration supports as many parameters as you want to pass this way. For more information, see [WebApi Service Hosting](WebApi-Service-Hosting))._
+_Note: When hosting this service in WebApi, you need to make sure that the routing configuration supports as many parameters as you want to pass this way. For more information, see [WebApi Service Hosting](WebApi%20Service%20Hosting))._
 
 A slightly different approach would be to use named parameters rather than inline parameters. To do so, we change the contract to the following:
 
@@ -222,7 +222,7 @@ public string Id { get; set; }
 
 And that's it! We can now call the service on the desired URL with a PUT Verb (you will have to use a tool like Fiddler, if you want to try this out... this URL can NOT be called by just typing it into a browser... which is a desired side-effect!).
 
-A typical example would be to call this from a JavaScript client. The actual customer data has to be passed along as the HTTP payload in JSON format. You may wonder how you would know the correct JSON format. Well, you can probably deduce it from the C# contract. A simpler version is to use the CODE Framework Service Test Harness (see also: [Using the Service Test Harness](Using-the-Service-Test-Harness)), which always gives you access to the contract in various formats, including JSON. Here's an example of the input message in JSON format:
+A typical example would be to call this from a JavaScript client. The actual customer data has to be passed along as the HTTP payload in JSON format. You may wonder how you would know the correct JSON format. Well, you can probably deduce it from the C# contract. A simpler version is to use the CODE Framework Service Test Harness (see also: [Using the Service Test Harness](Using%20the%20Service%20Test%20Harness)), which always gives you access to the contract in various formats, including JSON. Here's an example of the input message in JSON format:
 
 ```javascript
 {
