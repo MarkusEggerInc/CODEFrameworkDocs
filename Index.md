@@ -27,7 +27,7 @@ We are in the process of compiling a list of "quick tips" (most of which are exc
 
 ## More...
 
-For further information and documentation on the CODE Framework, see [http://www.codemag.com/framework](http://www.codemag.com/framework).
+For further information and documentation on the CODE Framework, see [http://codeframework.io](http://codeframework.io).
 ## Quick Introduction to using the Framework
 The easiest way to get started with the CODE Framework, is to install the _CODE Framework Tools_ Visual Studio Extension through the Visual Studio Extension Manager:
 
