@@ -1,4 +1,4 @@
-﻿# ObjectHelper and Complex Paths
+﻿# Using ObjectHelper and Complex Paths
 
 _This is an excerpt from an internal email at EPS/CODE:_
 
