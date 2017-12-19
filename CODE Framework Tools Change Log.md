@@ -1,9 +1,3 @@
-# This Site Has Moved!
-
-Due to CodePlex shutting down, this site has moved. For the latest and greatest about CODE Framework, beyond the information and versions provided here, check out [http://www.codemag.com/framework](http://www.codemag.com/framework). After October 1st, 2017, no updates will be added to CodePlex. Instead, this project will be maintained on the aforementioned site.
-
-
-
 # CODE Framework Tools Change Log
 
 _Note: CODE Framework Tools can be installed through the Visual Studio Extension Manager or directly from the [Visual Studio Gallery](http://visualstudiogallery.msdn.microsoft.com/91b58827-9720-487a-930c-c19a76c0b853)_
