@@ -1,13 +1,9 @@
-# This Site Has Moved!
-
-Due to CodePlex shutting down, this site has moved. For the latest and greatest about CODE Framework, beyond the information and versions provided here, check out [http://www.codemag.com/framework](http://www.codemag.com/framework). After October 1st, 2017, no updates will be added to CodePlex. Instead, this project will be maintained on the aforementioned site.
-
-
-
-Note: This document provides an overview of the changes to the framework and which public CODE Framework builds include these changes. We release public builds at irregular intervals. Note that there are many more internal builds we have. If you have a need for a pressing change or need one of the changes listed in the "work in progress" section, please contact us at info@codemag.com.
-
-
 # CODE Framework (.NET) Change Log
+
+## Work in Progress
+
+* ServiceClient.CallRest() now uses our own branch of JSON.NET to deserialize the result. Also, it is now possible to pass in a function that performs the deserialization instead of the default behavior.
+
 
 ## 4.1.930.0
 
