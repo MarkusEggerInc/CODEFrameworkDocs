@@ -22,7 +22,7 @@ public interface ICustomerService
 }
 ```
 
-This service definition looks very much like a WCF service. And it is true that this service _can_ be implemented as a WCF service and hosted as a SOAP, TCP/IP, or other service. However, there is nothing in this service that forces it to be WCF hosted. In CODE Framework, this very service can be hosted in WebApi as a REST service (see also: [WebApi Service Hosting](WebApi#20Service%20Hosting)) or a .NET Core Service (even deployed to Docker and all kinds of other things).
+This service definition looks very much like a WCF service. And it is true that this service _can_ be implemented as a WCF service and hosted as a SOAP, TCP/IP, or other service. However, there is nothing in this service that forces it to be WCF hosted. In CODE Framework, this very service can be hosted in WebApi as a REST service (see also: [WebApi Service Hosting](WebApi%20Service%20Hosting)) or a .NET Core Service (even deployed to Docker and all kinds of other things).
 
 The question is: What would a service like this look like if accessed using REST? 
 
