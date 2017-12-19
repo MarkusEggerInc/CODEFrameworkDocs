@@ -1,3 +1,5 @@
+# Using the Transparent Proxy Generator
+
 Some operations require what is called a "transparent proxy". For instance, when you make a WCF service call using a channel factory, you specify that you want to make a call to a service that conforms with a certain interface. WCF then gives you **a real object** that implements that interface. But where did that object/class come from? It doesn't exist as a real class that is part of your project. Instead, WCF generated it on the fly. That is what is called a "transparent proxy". CODE Framework also uses transparent proxies. One such scenario is when making a strongly typed call to a REST service. (See also: [Calling REST Services through ServiceClient](Calling%20REST%20Services%20through%20ServiceClient).
 
 Creating transparent proxies is not a trivial matter. Code has to be generated and compiled on the fly to make this happen. CODE Framework has a TransparentProxyGenerator class that does this. It takes an interface and then generates a live class from it. This new class doesn't do much on its own. Instead, it takes a reference to a handler class. It is very generic and can be used for other things.

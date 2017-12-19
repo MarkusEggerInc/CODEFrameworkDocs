@@ -1,6 +1,10 @@
+# CODE Framework Theme Icons
+
 The upcoming version of CODE Framework WPF has a new ThemeIcon control, which is kind of cool. In its simplest fashion, it just makes it easy to add an icon into a view and bind it to one of the default icons we support, by means of setting an enum. Like this:
 
-{{<mvvm:ThemeIcon StandardIcon="Save" />}}
+```
+<mvvm:ThemeIcon StandardIcon="Save" />
+```
 
 So that is kind of cool, because it makes it easier to use the default icons we provide. So instead of always looking the information up on Codeplex (http://codeframework.codeplex.com/wikipage?title=Standard%20Icon%20Resources), the enum guides you to the icons that are available (with a simplified name… so “CODE.Framework-Icon-Save” is just called “Save” in the enum).
 
@@ -8,7 +12,9 @@ The ThemeIcon does a few things for you. For one, it loads the icon in question,
 
 Note that this also works for non-standard theme. The StandardIcon property is a convenient way to get at icons, but you can also do this:
 
-{{<mvvm:ThemeIcon IconResourceKey="MySpecialIcon" />}}
+```
+<mvvm:ThemeIcon IconResourceKey="MySpecialIcon" />
+```
 
 This simply loads a brush resource called “MySpecialIcon” (the StandardIcon property is just a simplified way of setting the resource key). Even in this case, the theme icon control still listens to theme switching events (which are raised on the ApplicationEx object… so Application.Current has those events) and thus re-evaluates the resource whenever a new theme is loaded. So if you have created theme-specific icons using your own keys, then they will load correctly. (If the icon isn’t theme specific, it will just end up re-loading the same one… wastes a bit of processing power, but doesn’t have other ill effects). 
 
