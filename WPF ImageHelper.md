@@ -1,4 +1,4 @@
-﻿# WPF Image Helper
+﻿# WPF ImageHelper
 
 _Excerpt from an internal email at EPS/CODE:_
 

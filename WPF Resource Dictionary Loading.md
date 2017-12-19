@@ -1,3 +1,5 @@
+# WPF Resource Dictionary Loading
+
 _Excerpt from an internal email at EPS/CODE_:
 
 We have added a few new small but interesting features to the theme resource dictionary loading mechanism in the WPF framework.
