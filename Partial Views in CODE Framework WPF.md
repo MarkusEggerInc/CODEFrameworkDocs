@@ -55,7 +55,7 @@ public ActionResult CustomerName(ParameterType parameter)
 }
 ```
 
-Note that the parameter doesn’t have to be called “parameter”. CODE Framework matches single-parameter action methods by parameter type if the name doesn’t match, hence this parameter can be called anything you would like it to be, as long as the type matches:
+Note that the parameter doesn’t have to be called "parameter". CODE Framework matches single-parameter action methods by parameter type if the name doesn’t match, hence this parameter can be called anything you would like it to be, as long as the type matches:
 
 ```c#
 public ActionResult CustomerName(ParameterType parentModel) 
