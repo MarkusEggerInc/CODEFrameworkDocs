@@ -11,13 +11,13 @@ Let's consider a basic service definition:
 ```c#
 public interface ICustomerService
 {
-    [OperationContract](OperationContract)
+    [OperationContract]
     GetCustomerListResponse GetCustomerList(GetCustomerListRequest request);
 
-    [OperationContract](OperationContract)
+    [OperationContract]
     GetCustomerResponse GetCustomer(GetCustomerRequest request);
 
-    [OperationContract](OperationContract)
+    [OperationContract]
     SaveCustomerResponse SaveCustomer(SaveCustomerRequest request);
 }
 ```
