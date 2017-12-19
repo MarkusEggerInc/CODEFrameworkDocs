@@ -1,9 +1,3 @@
-# This Site Has Moved!
-
-Due to CodePlex shutting down, this site has moved. For the latest and greatest about CODE Framework, beyond the information and versions provided here, check out [http://www.codemag.com/framework](http://www.codemag.com/framework). After October 1st, 2017, no updates will be added to CodePlex. Instead, this project will be maintained on the aforementioned site.
-
-
-
 # CODE Framework Documentation
 ## Articles
 We are in the process of writing a whole series of [Articles](Articles)(Articles) which will be published in CODE Magazine. Check out the [Articles](Articles)(Articles) page for more information.
