@@ -1,0 +1,11 @@
+<div class="wikidoc">
+<h2>Default Focus in Views</h2>
+<p>CODE Framework allows setting where the default focus in views goes when views load. This is simply done by means of an attached property. For instance, if you want the focus to go to a textbox within a view by default, you can use the following XAML definition:<br>
+<br>
+</p>
+<div style="color:black; background-color:white">
+<pre> <span style="color:blue">&lt;</span><span style="color:#a31515">TextBox</span> <span style="color:red">Text</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">{Binding UserName}</span><span style="color:black">&quot;</span> <span style="color:red">c:View.HasDefaultFocus</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">True</span><span style="color:black">&quot;</span> <span style="color:blue">/&gt;</span>
+</pre>
+</div>
+<p>You should only set one control within a view to receive the default focus. If you were to set this property to True on multiple controls however, the last one wins.</p>
+</div><div class="ClearBoth"></div>

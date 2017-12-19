@@ -1,0 +1,130 @@
+<div class="wikidoc">
+<p>CODE Framework provides a native system that allows developers to query application settings. This is similar to using the ConfigurationSettings class provided by the .NET Framework, but the CODE Framework Configuration System is much more powerful as it
+ fully supports everything in the .NET configuration system, but also a lot more. For this reason, developers should always use the CODE Framework system.</p>
+<p>In order to use the CODE Framework Configuration System, make sure to add a reference to the CODE.Framework.Core.dll assembly, which should be part of every CODE Framework application anyway.</p>
+<p>There are a number of ways to set configuration options for applications using this system. The system supports things such as XML configuration files, SQL Server configuration, and much more. For simplicity's sake, we will assume that you are using an app.config
+ (windows applications) or web.config (web application) file. Just be aware that the system supports a lot of other options as well. Here is the example configuration file we are using here:</p>
+<div style="color:black; background-color:white">
+<pre>&lt;xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+<span style="color:blue">&lt;</span><span style="color:#a31515">configuration</span><span style="color:blue">&gt;</span>
+<span style="color:blue">  &lt;</span><span style="color:#a31515">appSettings</span><span style="color:blue">&gt;</span>
+<span style="color:blue">    &lt;</span><span style="color:#a31515">add</span> <span style="color:red">key</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">database:UserName</span><span style="color:black">&quot;</span> <span style="color:red">value</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">devuser</span><span style="color:black">&quot;</span><span style="color:blue">/&gt;</span>
+<span style="color:blue">    &lt;</span><span style="color:#a31515">add</span> <span style="color:red">key</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">database:Password</span><span style="color:black">&quot;</span> <span style="color:red">value</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">devuser</span><span style="color:black">&quot;</span><span style="color:blue">/&gt;</span>
+<span style="color:blue">    &lt;</span><span style="color:#a31515">add</span> <span style="color:red">key</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">database:Server</span><span style="color:black">&quot;</span> <span style="color:red">value</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">(local)</span><span style="color:black">&quot;</span><span style="color:blue">/&gt;</span>
+<span style="color:blue">    &lt;</span><span style="color:#a31515">add</span> <span style="color:red">key</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">database:Catalog</span><span style="color:black">&quot;</span> <span style="color:red">value</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">Northwind</span><span style="color:black">&quot;</span><span style="color:blue">/&gt;</span>
+<span style="color:blue">    &lt;</span><span style="color:#a31515">add</span> <span style="color:red">key</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">DataServices</span><span style="color:black">&quot;</span> <span style="color:red">value</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">SqlDataService</span><span style="color:black">&quot;</span><span style="color:blue">/&gt;</span>
+<span style="color:blue">  &lt;/</span><span style="color:#a31515">appSettings</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&lt;/</span><span style="color:#a31515">configuration</span><span style="color:blue">&gt;</span>
+</pre>
+</div>
+<p>To query the one of these settings such as the &quot;DataServices&quot; setting in the following fashion:</p>
+<div style="color:black; background-color:white">
+<pre><span style="color:blue">string</span> result = ConfigurationSettings.Settings[<span style="color:#a31515">&quot;DataServices&quot;</span>];
+</pre>
+</div>
+<p>In case the setting doesn't exist, an exception of type SettingNotSupportedException will be thrown. For this reason, one should first check whether that setting is available/supported. The IsSettingSupported() method does the trick:</p>
+<div style="color:black; background-color:white">
+<pre><span style="color:blue">if</span> (ConfigurationSettings.Settings.IsSettingSupported(<span style="color:#a31515">&quot;DataServices&quot;</span>))
+    <span style="color:blue">var</span> result = ConfigurationSettings.Settings[<span style="color:#a31515">&quot;DataServices&quot;</span>];
+</pre>
+</div>
+<p>You can also update configuration settings:</p>
+<div style="color:black; background-color:white">
+<pre>ConfigurationSettings.Settings[<span style="color:#a31515">&quot;DataServices&quot;</span>] = <span style="color:#a31515">&quot;OracleDataService&quot;</span>;
+</pre>
+</div>
+<p>This will determine where the setting was defined (app.config file in this example) and attempt to update the definition file (an individual configuration file - such as the app.config file - is referred to as a &quot;configuration source&quot;). Notice however that
+ the source might be read-only (such as the native AppSettings section from the native config file). In such case, attempting to change a setting's value will throw an exception of type SettingReadOnlyException.</p>
+<p>&nbsp;</p>
+<h3>Overriding Settings Temporarily</h3>
+<p>It is possible to override the value of a setting temporarily, so that all the application will make use of the overridden value until shut-down (although the setting will not be preserved in the original source... this is just an &quot;in-memory&quot; override):</p>
+<div style="color:black; background-color:white">
+<pre><span style="color:green">// Override the setting on the native file by adding the setting to the Memory source.</span> ConfigurationSettings.Sources[<span style="color:#a31515">&quot;Memory&quot;</span>].Settings[<span style="color:#a31515">&quot;DataServices&quot;</span>] = <span style="color:#a31515">&quot;OracleDataService&quot;</span>;<br><span style="color:green">// Do whatever has to be done.....</span> <br><span style="color:green"><br>// This returns &quot;OracleDataService&quot;</span> <br><span style="color:blue">var</span> dataService = ConfigurationSettings.Settings[<span style="color:#a31515">&quot;DataServices&quot;</span>]; <br><span style="color:green">// Remove overriden setting from memory if you do not want to use it anymore.</span> <br>ConfigurationSettings.Sources[<span style="color:#a31515">&quot;Memory&quot;</span>].Settings[<span style="color:#a31515">&quot;DataServices&quot;</span>] = <span style="color:blue">null</span>; <br><span style="color:green">// This returns &quot;SqlDataService?&quot;</span> <br><span style="color:blue">var</span> dataService2 = ConfigurationSettings.Settings[<span style="color:#a31515">&quot;DataServices&quot;</span>];</pre>
+</div>
+<p>In this example, we are writing the new option to a different source (memory). Settings made in memory always override settings from the app.config file (well, unless you manually change that order).</p>
+<p>&nbsp;</p>
+<h3>Getting Direct Access to a Source</h3>
+<p>The ConfigurationSettings object can hold any number of configuration sources. When a setting is getting retrieved as in</p>
+<div style="color:black; background-color:white">
+<pre><span style="color:blue">var</span> result = ConfigurationSettings.Settings[<span style="color:#a31515">&quot;DataServices&quot;</span>];
+</pre>
+</div>
+<p>The mechanism will look for the first setting it can find based on the order different sources have been added. However, sometimes the developer may want to retrieve a setting from a specific source. The following example shows how to retrieve a setting
+ from the app.config file and the app.config file only (even if other sources - such as memory - have the same setting):</p>
+<div style="color:black; background-color:white">
+<pre><span style="color:blue">var</span> result = ConfigurationSettings.Sources[<span style="color:#a31515">&quot;DotNetConfigurationFile&quot;</span>].Settings[<span style="color:#a31515">&quot;DataServices&quot;</span>];
+</pre>
+</div>
+<p>Accessing a config source that doesn't exist on the collection used to throw an exception. That behavior has been changed, and now instead of throwing an exception, just a &quot;null&quot; gets returned, and it's up to the developer to decide on what to do when the
+ source hasn't been found (like instantiating the source and adding it to the collection).</p>
+<p>&nbsp;</p>
+<h3>Supporting Custom Config Files/Sources</h3>
+<p>It is possible to work with specialized custom config files (or even non-file based configuration sources, such as databases), using the same sort of interface for it. As an example, consider a UIConfig.xml file that looks like so:</p>
+<div style="color:black; background-color:white">
+<pre>&lt;xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+<span style="color:blue">&lt;</span><span style="color:#a31515">specialsettings</span><span style="color:blue">&gt;</span>
+<span style="color:blue">  &lt;</span><span style="color:#a31515">backgroundcolor</span><span style="color:blue">&gt;</span>Brown<span style="color:blue">&lt;/</span><span style="color:#a31515">backgroundcolor</span><span style="color:blue">&gt;</span>
+<span style="color:blue">  &lt;</span><span style="color:#a31515">foregroundcolor</span><span style="color:blue">&gt;</span>Yellow<span style="color:blue">&lt;/</span><span style="color:#a31515">foregroundcolor</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&lt;/</span><span style="color:#a31515">specialsettings</span><span style="color:blue">&gt;</span>
+</pre>
+</div>
+<p>The content of this file looks very different than the native config file. In order to handle it, a new configuration class must be created, and this class must implement the IConfigurationSource interface. There's a ConfigurationSource abstract class that
+ implements that interface, and could be used as well, since it provides some default behavior. The new class could look like the one below:</p>
+<div style="color:black; background-color:white">
+<pre><span style="color:blue">using</span> System;
+<span style="color:blue">using</span> System.IO;
+<span style="color:blue">using</span> System.Xml; <br> 
+<span style="color:blue"><br><br>namespace</span> MyConfig
+{
+<span style="color:blue">   public</span> <span style="color:blue">class</span> SpecialConfiguration : ConfigurationSource
+   {
+      FileInfo fiSettingsFile;
+<span style="color:blue">      string</span> file = <span style="color:#a31515">@&quot;C:\Path\UIConfig.xml&quot;</span>;<br>
+<span style="color:blue">      public</span> SpecialConfiguration()
+      {
+<span style="color:blue">         </span>Read();
+      }<br>
+<span style="color:blue">      public</span> <span style="color:blue">override</span> <span style="color:blue">string</span> FriendlyName
+      {
+<span style="color:blue">         get</span> { <span style="color:blue">return</span> <span style="color:#a31515">&quot;SpecialConfiguration&quot;</span>; }
+      }<br>
+<span style="color:blue">      public</span> <span style="color:blue">override</span> <span style="color:blue">void</span> Read()
+      {&nbsp;&nbsp;&nbsp;&nbsp; XmlDocument dom = <span style="color:blue">null</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode node = <span style="color:blue">null</span>;<br>
+         fiSettingsFile = <span style="color:blue">new</span> FileInfo(file);
+         Settings.Clear();<br>         dom = <span style="color:blue">new</span> XmlDocument();
+         dom.Load(<span style="color:blue">this</span>.file);
+         node = dom.DocumentElement.SelectSingleNode(<span style="color:#a31515">&quot;backgroundcolor&quot;</span>);
+<span style="color:blue">       <br>         </span><span style="color:blue">if</span> (node != <span style="color:blue">null</span>) 
+            Settings.Add(<span style="color:#a31515">&quot;backgroundcolor&quot;</span>, node.InnerXml);
+         node = dom.DocumentElement.SelectSingleNode(<span style="color:#a31515">&quot;foregroundcolor&quot;</span>);
+<span style="color:blue">         if</span> (node != <span style="color:blue">null</span>) 
+            Settings.Add(<span style="color:#a31515">&quot;foregroundcolor&quot;</span>, node.InnerXml);<br>      }<br>
+<br><br>      <span style="color:blue">public</span> <span style="color:blue">override</span> <span style="color:blue">void</span> Write()
+      {
+         XmlDocument dom = <span style="color:blue">null</span>;
+         XmlNode node = <span style="color:blue">null</span>;
+<span style="color:blue"><br>         <br>         </span>fiSettingsFile = <span style="color:blue">new</span> FileInfo(file);
+         dom = <span style="color:blue">new</span> XmlDocument();
+         dom.Load(<span style="color:blue">this</span>.fiSettingsFile.ToString());
+         node = dom.DocumentElement.SelectSingleNode(<span style="color:#a31515">&quot;backgroundcolor&quot;</span>);
+<span style="color:blue">         if</span> (node != <span style="color:blue">null</span>) 
+            node.InnerXml = <span style="color:blue">this</span>.Settings[<span style="color:#a31515">&quot;backgroundcolor&quot;</span>].ToString();
+         node = dom.DocumentElement.SelectSingleNode(<span style="color:#a31515">&quot;foregroundcolor&quot;</span>);
+<span style="color:blue">         if</span> (node != <span style="color:blue">null</span>) 
+            node.InnerXml = <span style="color:blue">this</span>.Settings[<span style="color:#a31515">&quot;foregroundcolor&quot;</span>].ToString();
+<br>         dom.Save(fiSettingsFile.ToString());
+      }
+   }
+}
+</pre>
+</div>
+<p>The most important piece of the class is the Read and the Write methods. It is in those methods that we manually retrieve and store settings into the custom XML file. The Read method basically adds settings from the XML file to a collection (as in this.Settings.Add(&quot;backgroundcolor&quot;,
+ node.InnerXml)), whereas the Write method reads the values from the collection, updates the XML document, and save it to disk.</p>
+<p>Both the Write and Read methods are inherited from the abstract class, and those two methods are part of other methods that come from the abstract class and must be overridden by this derived class.</p>
+<p>The new class can be easily used. It just has to be added to the Sources list, and settings can be retrieved in the same fashion we've already seen:</p>
+<div style="color:black; background-color:white">
+<pre>ConfigurationSettings.Sources.Add(<span style="color:blue">new</span> SpecialConfiguration());
+<span style="color:blue">string</span> backcolor = ConfigurationSettings.Settings[<span style="color:#a31515">&quot;backgroundcolor&quot;</span>];
+</pre>
+</div>
+</div><div class="ClearBoth"></div>

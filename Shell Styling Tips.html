@@ -1,0 +1,17 @@
+<div class="wikidoc">
+<h1>WPF MVVM Shell Styling Tips</h1>
+<h2>General Styling Tips</h2>
+<p>The upcoming issue of CODE Magazine features an article on creating styles and themes in CODE Framework. As soon as it is available, we will post a link here.</p>
+<h2>Showing the Selected View</h2>
+<p>There are SelectedNormalViewResult and SelectedTopLevelViewResult properties on the Shell object so one can easily bind a content control to whatever view is currently open, rather than always binding to all open views.
+<br>
+<br>
+This can now be done like so in the Shell style:</p>
+<pre><span style="color:blue">&lt;</span><span style="color:#a31515">ContentControl</span> <span style="color:red">Content</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">{Binding SelectedNormalViewResult.View}</span><span style="color:black">&quot;</span> <span style="color:blue">/&gt;</span></pre>
+<p>That one shows the selected normal view. If you want to show the current top-level (popup) view, it can be done like so:</p>
+<div style="color:black; background-color:white">
+<pre><span style="color:blue">&lt;</span><span style="color:#a31515">ContentControl</span> <span style="color:red">Content</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">{Binding SelectedTopLevelViewResult.View}</span><span style="color:black">&quot;</span> <span style="color:blue">/&gt;</span>
+</pre>
+</div>
+<p>&nbsp;</p>
+</div><div class="ClearBoth"></div>

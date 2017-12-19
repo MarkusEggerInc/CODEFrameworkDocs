@@ -1,0 +1,19 @@
+<div class="wikidoc">
+<p>CODE Framework has a control called the CapsLockWarning control. It can be used, as you probably guessed, to warn the user that caps-lock is on. It looks different in different themes, but here is an example:</p>
+<p><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=1610024"><img title="clip_image001" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=1610025" alt="clip_image001" width="310" height="262" border="0"></a></p>
+<p>Here is the code that goes with that view:</p>
+<pre>&lt;mvvm:View xmlns=&quot;<a href="http://schemas.microsoft.com/winfx/2006/xaml/presentation">http://schemas.microsoft.com/winfx/2006/xaml/presentation</a>&quot; <br>           xmlns:mvvm=&quot;clr-namespace:CODE.Framework.Wpf.Mvvm;assembly=CODE.Framework.Wpf.Mvvm&quot;<br>           xmlns:c=&quot;clr-namespace:CODE.Framework.Wpf.Controls;assembly=CODE.Framework.Wpf&quot;<br>           Title=&quot;Login to NuTyme&quot;<br>           Style=&quot;{DynamicResource CODE.Framework-Layout-SimpleFormLayout}&quot;&gt;<br>  &lt;Label&gt;User Name&lt;/Label&gt;<br>  &lt;TextBox Text=&quot;{Binding UserName}&quot; mvvm:View.WidthEx=&quot;30&quot; /&gt;<br>  &lt;Label&gt;Password&lt;/Label&gt;<br>  &lt;PasswordBox c:PasswordBoxEx.Value=&quot;{Binding Password}&quot; mvvm:View.WidthEx=&quot;30&quot; /&gt;<br>  &lt;c:CapsLockWarning /&gt;<br>&lt;/mvvm:View&gt;</pre>
+<p><br>
+We&nbsp;decided to add this control, because we&nbsp;saw this implemented in problematic ways a number of times. One of the issues is that the warning needs to work right, even if the user switches to a different app and hits CAPSLOCK there, the indicator can&rsquo;t
+ get confused. The other reason we added this was that we simply wanted to make this easy and be able to remove the often complex code that was required for this.</p>
+<p>The control itself is simple. It only has one meaningful property called CapsLockOn. When that is true, the CAPSLOCK key is pressed. The control has a template that shows a warning whenever that property is true. The control looks a bit different in different
+ themes, but what you see above is representative. It is of course possible (and easy) to simply create your own control template that shows whatever you want displayed when CAPSLOCK is on.</p>
+<p>BTW: The way we&nbsp;make sure we&nbsp;don&rsquo;t miss that CAPSLOCK is turned on while the focus is elsewhere, we use a &ldquo;global keyboard hook&rdquo;, which is a lower-level feature in Windows, that allows us to listed to keyboard events, no matter
+ where they happen, and also provides access to certain keystrokes you would otherwise not have access to. This requires interop and knowledge of the Windows SDK, so we&nbsp;thought we&rsquo;d also make this easier. We&nbsp;thus introduced a GlobalKeyboardHookHelper
+ class. Using this class, you can do this:</p>
+<pre>_keyHelper = new GlobalKeyboardHookHelper();<br>_keyHelper.KeyDown &#43;= (s, e) =&gt;<br>{<br>   &nbsp;if (e.Key == Key.Capital || e.Key == Key.CapsLock)<br>        CapsLockOn = Keyboard.GetKeyStates(Key.CapsLock) != KeyStates.Toggled;<br>};<br> <br>Unloaded &#43;= (s2, e2) =&gt;<br>{<br>   _keyHelper.Dispose();<br>};</pre>
+<p><br>
+So this fires a KeyDown event, just like other keyboard events. The difference is that this fires, even if your app doesn&rsquo;t have focus (so this may or may not be something you want). You also are notified of keys you would otherwise miss, such as WINDOWS
+ keys.</p>
+<p>Note that we are&nbsp;making sure we are&nbsp;calling Dispose() on the helper object. This is important, because there are unmanaged resources being used here.</p>
+</div><div class="ClearBoth"></div>

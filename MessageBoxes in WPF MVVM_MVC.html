@@ -1,0 +1,170 @@
+<div class="wikidoc">
+<h2>Message Boxes in WPF MVVM/MVC Applications</h2>
+<p>CODE Framework supports a native way to do message boxes. And that is a lot cooler than it sounds :-)</p>
+<p>Here are some of the benefits/needs:</p>
+<ul>
+<li>Message boxes needs to be completely stylable </li><li>They should work the same in all kinds of environments (the syntax on Windows Phone should be the same as in WPF for instance to enable code reuse and know-how reuse)
+</li><li>They should also work the same no matter whether message boxes are popup modal dialogs, or whether message boxes are floating elements (like in Metro or Silverlight).
+</li><li>Message boxes should support a lot more than default buttons and a bit of text. Message boxes need to show any button I want and I want to show additional UI elements such as textboxes and radio buttons
+</li><li>Whenever a view model calls for a message box, that should not break testability.
+</li></ul>
+<p>&nbsp;</p>
+<h3>Message Box Fundamentals</h3>
+<p>Fundamentally, CODE Framework message boxes are quite simple, as they provide all the standard features available in typical .NET message box scenarios (such as in WPF or WinForms). The main difference between CODE Framework message boxes and other .NET
+ environments is that in CODE Framework, for consistency, flexibility, and added power, message box calls are routed through controllers. The basic idea is simple: The Controller class now has a Message() method that takes parameters that are practically identical
+ to the default MessageBox.Show() stuff that is available in various .NET namespaces.</p>
+<p>So you can simply do the following:</p>
+<div style="color:black">
+<pre>Controller.Message(<span style="color:#a31515">&quot;Hello World!&quot;</span>); 
+</pre>
+</div>
+<p>The output of this will depend entirely on your skin (and you can skin it further if you want). For instance, using our Windows 95 skin (Battleship), the above line creates this message:</p>
+<p><a href="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393247"><img title="clip_image001" src="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393248" alt="clip_image001" width="481" height="245" border="0" style="padding-left:0px; padding-right:0px; display:inline; padding-top:0px; border-width:0px"></a></p>
+<p>And if you were to run our Metro skin (with further customized colors in this example), you would see something like this:</p>
+<p><a href="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393249"><img title="clip_image003" src="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393250" alt="clip_image003" width="425" height="215" border="0" style="padding-left:0px; padding-right:0px; display:inline; padding-top:0px; border-width:0px"></a></p>
+<p>Note: Calling Controller.Message() is just a shortcut for creating an action on a controller that returns a MessageBoxResult. You can do that as well (see below), but this shortcut is of course very convenient in many cases.</p>
+<p>Of course you can pass a variety of parameters to get different stuff to show up. Like this example for instance:</p>
+<div style="color:black">
+<pre>Controller.Message(<span style="color:#a31515">&quot;Hello World!&quot;</span>, <span style="color:#a31515">&quot;Message title&quot;</span>, <br>    MessageBoxButtons.YesNoCancel, MessageBoxImages.Question); 
+</pre>
+</div>
+<p>This results in the following (Win95 skin):</p>
+<p><a href="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393251"><img title="clip_image004" src="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393252" alt="clip_image004" width="481" height="245" border="0" style="padding-left:0px; padding-right:0px; display:inline; padding-top:0px; border-width:0px"></a></p>
+<p>Here&rsquo;s the Metro version:</p>
+<p><a href="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393253"><img title="clip_image006" src="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393254" alt="clip_image006" width="388" height="221" border="0" style="padding-left:0px; padding-right:0px; display:inline; padding-top:0px; border-width:0px"></a></p>
+<p>Or a slightly longer text version in Metro:</p>
+<p><a href="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393255"><img title="clip_image007" src="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393256" alt="clip_image007" width="711" height="290" border="0" style="padding-left:0px; padding-right:0px; display:inline; padding-top:0px; border-width:0px"></a></p>
+<p>And the same in Win95:</p>
+<p><a href="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393257"><img title="clip_image008" src="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393258" alt="clip_image008" width="745" height="287" border="0" style="padding-left:0px; padding-right:0px; display:inline; padding-top:0px; border-width:0px"></a></p>
+<h3>Getting Results</h3>
+<p>There are a few additional things to point out: Modern message boxes really have a few issues, especially when they are styled, or when they run in environments such as Windows 8 Metro: For one, they may not be modal and may not block execution. So you can&rsquo;t
+ just wait for the message box to return a result based on the button that was clicked. We have tried to solve this problem and make things as easy as possible for you to give you an easy way to handle this, by allowing you to pass the code you want to execute
+ after a button was clicked. Example: Let&rsquo;s say in the code of your view model, you want to pop up a message and ask the user if they want to save. If they click yes, you want to call the Save() method. You could do this like so:</p>
+<div style="color:black">
+<pre>Controller.Message(<span style="color:#a31515">&quot;Would you like to save the current record?&quot;</span>,<br>                    <span style="color:#a31515">&quot;Data&quot;</span>,
+                    icon: MessageBoxImages.Warning, 
+                    buttons: MessageBoxButtons.YesNo,
+                    onComplete: r =&gt;
+                    {
+                        <span style="color:blue">if</span> (r.ModelMessageBox.Result == MessageBoxResults.Yes)
+                            Console.WriteLine(<span style="color:#a31515">&quot;Saving...&quot;</span>);
+                    });</pre>
+</div>
+<p>Note the onComplete code (here just echoing something to the Console, but imagine it did a this.Save()) which is called whenever the message box is closed one way or another. So it becomes a simple way to run code that works in absolutely every scenario
+ (including testing&hellip; in test scenarios no actual UI would be displayed).</p>
+<p>This creates these message boxes for Metro and Win95 theme respectively:</p>
+<p><a href="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393259"><img title="clip_image010" src="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393260" alt="clip_image010" width="393" height="221" border="0" style="padding-left:0px; padding-right:0px; display:inline; padding-top:0px; border-width:0px"></a></p>
+<p><a href="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393261"><img title="clip_image011" src="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393262" alt="clip_image011" width="531" height="245" border="0" style="padding-left:0px; padding-right:0px; display:inline; padding-top:0px; border-width:0px"></a></p>
+<p>&nbsp;</p>
+<h3>Custom Message Boxes</h3>
+<p>Here&rsquo;s a little secret: Message boxes in CODE Framework are just a standardized version of views and view models. In other words: When you make a call to Controller.Message(), it creates a MessageBoxViewModel and a standard view and shows them like
+ any other top level view (popup) view. And the best part: The default for that is just that: A default. And you can mess with that at your heart&rsquo;s content. You can subclass that view model, and you can do really funky message boxes by creating your own
+ views.</p>
+<p>The following example shows a message box that uses 2 custom view actions rather than the default buttons:</p>
+<div style="color:black">
+<pre><span style="color:blue">var</span> myActions = <span style="color:blue">new</span> List&lt;IViewAction&gt;
+{
+    <span style="color:blue">new</span> MessageBoxViewAction(<span style="color:#a31515">&quot;Bouyah!&quot;</span>, execute: (a2, o2) =&gt;
+    {
+        <span style="color:blue">var</span> action1 = a2 <span style="color:blue">as</span> MessageBoxViewAction;
+        <span style="color:blue">if</span> (action1 != <span style="color:blue">null</span>)
+        {
+            <span style="color:green">// Do something here...</span>
+            action1.Model.Result = MessageBoxResults.OK;
+            Controller.CloseViewForModel(action1.Model);
+        }
+    }),
+    <span style="color:blue">new</span> MessageBoxViewAction(<span style="color:#a31515">&quot;Get out!&quot;</span>, execute: (a3, o3) =&gt;
+    {
+        <span style="color:blue">var</span> action2 = a3 <span style="color:blue">as</span> MessageBoxViewAction;
+        <span style="color:blue">if</span> (action2 != <span style="color:blue">null</span>)
+        {
+            action2.Model.Result = MessageBoxResults.Cancel;
+            Controller.CloseViewForModel(action2.Model);
+        }
+    })
+};
+Controller.Message(<span style="color:#a31515">&quot;Hello World!&quot;</span>, actions: myActions);</pre>
+</div>
+<p>Note that these 2 custom actions are based on the MessageBoxViewAction class. This is not mandatory, but if you do, then the first parameter that gets passed to the execute method is a reference to that specific class, which has a Model property that is
+ typed as a MessageBoxViewModel, which provides easy and convenient access to the model and important properties such as the Result property, which is generally used to indicate the overall result produced by the message box. (The model object could also be
+ subclassed, which could provide additional information&hellip; see below).</p>
+<p>Here is the result of this particular message box shown in Metro style:</p>
+<p><a href="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=404523"><img title="image" src="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=404524" alt="image" width="445" height="210" border="0" style="padding-left:0px; padding-right:0px; display:inline; padding-top:0px; border-width:0px"></a></p>
+<p><em>Note: It is also possible to use the ShortcutKey and ShortcutModifiers properties on the actions to assign hotkeys to actions.</em></p>
+<p>The next sample is another simple example that contains a red label and also a textbox. It also uses 2 completely non-standard button captions, by adding to view actions that get automatically shown as buttons (our message boxes can have any number of buttons/actions).
+ Here is the Battleship (Windows 95 version):</p>
+<p><a href="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393263"><img title="clip_image012" src="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=393264" alt="clip_image012" width="578" height="261" border="0" style="padding-left:0px; padding-right:0px; display:inline; padding-top:0px; border-width:0px"></a></p>
+<p>And here is the Metro version:</p>
+<p><a href="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=404619"><img title="image" src="http://download.codeplex.com/Download?ProjectName=codeframework&DownloadId=404620" alt="image" width="592" height="231" border="0" style="padding-left:0px; padding-right:0px; display:inline; padding-top:0px; border-width:0px"></a></p>
+<p>This uses a custom view model as well as a custom view. The view model defines the text as well as an additional property for the textbox. It also defines 2 custom view actions. Here is the code for that view model:</p>
+<div style="color:black">
+<pre><span style="color:blue">public</span> <span style="color:blue">class</span> Message3ViewModel : MessageBoxViewModel
+{     <br>    <span style="color:blue">public</span> Message3ViewModel()     <br>    {<br>        Actions.Add(<span style="color:blue">new</span> ViewAction(<span style="color:#a31515">&quot;Sure&quot;</span>, execute: (a, o) =&gt;
+        {
+            Result = MessageBoxResults.OK;
+            Controller.CloseViewForModel(<span style="color:blue">this</span>);
+        }) {IsDefault = <span style="color:blue">true</span>});<br>        Actions.Add(<span style="color:blue">new</span> ViewAction(<span style="color:#a31515">&quot;No Way!&quot;</span>, execute: (a, o) =&gt;
+        {
+            Result = MessageBoxResults.Cancel;
+            Controller.CloseViewForModel(<span style="color:blue">this</span>);
+        }) {IsCancel = <span style="color:blue">true</span>});         <br><br> <br>        SomeInputText = <span style="color:#a31515">&quot;Test text&quot;</span>;<br>        Text = <span style="color:#a31515">&quot;The quick brown fox jumps over the lazy dog. &quot;</span>.Replicate(5);     <br>    }<br> <br><br><br>    <span style="color:blue">public</span> <span style="color:blue">string</span> SomeInputText { <span style="color:blue">get</span>; <span style="color:blue">set</span>; }
+}</pre>
+</div>
+<p>In addition, the following view is defined:</p>
+<div style="color:black">
+<pre><span style="color:blue">&lt;</span><span style="color:#a31515">mvvm</span><span style="color:blue">:</span><span style="color:#a31515">View</span> <span style="color:red">xmlns</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">http://schemas.microsoft.com/winfx/2006/xaml/presentation</span><span style="color:black">&quot;</span> 
+           <span style="color:red">xmlns:mvvm</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">clr-namespace:CODE.Framework.Wpf.Mvvm;assembly=CODE.Framework.Wpf.Mvvm</span><span style="color:black">&quot;</span>
+           <span style="color:red">xmlns:Controls</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">clr-namespace:CODE.Framework.Wpf.Controls;assembly=CODE.Framework.Wpf</span><span style="color:black">&quot;</span>
+           <span style="color:red">Title</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">Example Message</span><span style="color:black">&quot;</span><span style="color:blue">&gt;</span>
+    <span style="color:blue">&lt;</span><span style="color:#a31515">Grid</span> <span style="color:red">Controls:GridEx.RowHeights</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">Auto,Auto</span><span style="color:black">&quot;</span> <br>          <span style="color:red">Controls:GridEx.ColumnWidths</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">Auto,*</span><span style="color:black">&quot;</span> <br>          <span style="color:red">MaxWidth</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">500</span><span style="color:black">&quot;</span><span style="color:blue">&gt;</span>
+        <span style="color:blue">&lt;</span><span style="color:#a31515">TextBlock</span> <span style="color:red">Foreground</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">Red</span><span style="color:black">&quot;</span> <span style="color:red">Grid.ColumnSpan</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">2</span><span style="color:black">&quot;</span> <br>                   <span style="color:red">Text</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">{Binding Text}</span><span style="color:black">&quot;</span> <br>                   <span style="color:red">TextWrapping</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">Wrap</span><span style="color:black">&quot;</span> <br>                   <span style="color:red">FontSize</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">13</span><span style="color:black">&quot;</span> <span style="color:blue">/&gt;</span>
+        <span style="color:blue">&lt;</span><span style="color:#a31515">Label</span> <span style="color:red">Margin</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">10</span><span style="color:black">&quot;</span> <br>               <span style="color:red">Grid.Row</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">1</span><span style="color:black">&quot;</span><span style="color:blue">&gt;</span>Some other text: <span style="color:blue">&lt;/</span><span style="color:#a31515">Label</span><span style="color:blue">&gt;</span>
+        <span style="color:blue">&lt;</span><span style="color:#a31515">TextBox</span> <span style="color:red">Margin</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">10</span><span style="color:black">&quot;</span> <span style="color:red">Grid.Row</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">1</span><span style="color:black">&quot;</span> <br>                 <span style="color:red">Grid.Column</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">1</span><span style="color:black">&quot;</span> <br>                 <span style="color:red">Text</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">{Binding SomeInputText}</span><span style="color:black">&quot;</span> <span style="color:blue">/&gt;</span>
+    <span style="color:blue">&lt;/</span><span style="color:#a31515">Grid</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&lt;/</span><span style="color:#a31515">mvvm</span><span style="color:blue">:</span><span style="color:#a31515">View</span><span style="color:blue">&gt;</span></pre>
+</div>
+<p>Of course views need to be placed in a location where the view definition can be found. For instance, if this was a message box shown as part of interactions related to a Customer controller, it may be put in the \Views\Customer folder. In this example,
+ the file is named &ldquo;Message3.xaml&rdquo;.</p>
+<p>The message box can now be triggered in the following fashion:</p>
+<div style="color:black">
+<pre>Controller.Message(<span style="color:#a31515">&quot;Hello World!&quot;</span>, 
+    model: <span style="color:blue">new</span> Message3ViewModel(), 
+    viewName: <span style="color:#a31515">&quot;Message3&quot;</span>, 
+    controllerType: <span style="color:blue">typeof</span>(CustomerController)));
+</pre>
+</div>
+<p>There are a few interesting aspects here. The view model is passed as the model parameter. The name of the view (without the &ldquo;.xaml&rdquo; extension) is passed as the viewName parameter. Note that since we are simply calling the method on the standard
+ Controller class, there would be no way for the controller to know that the view goes with the Customer controller and is thus to be found in the \Views\Customers folder. For that reason, we also have to pass the controllerType parameter, which provides this
+ information. (Note: In the special case of having the view stored in the \Views\Shared folder, the controllerType parameter is not needed).</p>
+<p>Note that it is also possible to wrap all of this into a standard method inside the controller. The following method could have been added to the CustomerController method and then be called like all other controller actions to create the same message box:</p>
+<div style="color:black">
+<pre><span style="color:blue">public</span> ActionResult Message3() 
+{ 
+    <span style="color:blue">return</span> MessageBox(<span style="color:blue">new</span> Message3ViewModel()); 
+}
+</pre>
+</div>
+<p>This is a &ldquo;cleaner&rdquo; approach and may add testability. Ultimately, the prior version above is functionally almost identical to the explicit declaration of a view action.</p>
+<p>&nbsp;</p>
+<h3>Unit Testing Code with Message Boxes</h3>
+<p>Often, code you may want to unit test (especially view models) may have calls to message boxes. Message boxes normally launch user interfaces, which is not suitable for unit testing. To alleviate this problem, the Controller class allows pre-loading message
+ box results for subsequent message box calls. If that is done, the queued results will be used rather than displaying an interface.</p>
+<p>Consider the previous example of the view model. It asked the user to enter example text and then click a button (view action). We can easily mock this interaction for a unit test scenario by queuing a message box result in the following fashion:</p>
+<div style="color:black">
+<pre>Controller.QueueMessageBoxResult(MessageBoxResults.OK,<br>    m =&gt;<br>    {<br><span style="color:blue">        var</span> vm = m <span style="color:blue">as</span> Message3ViewModel;<br><span style="color:blue">        if</span> (vm != <span style="color:blue">null</span>)<br>            vm.SomeInputText = <span style="color:#a31515">&quot;Hello World!&quot;;</span><br>    });</pre>
+</div>
+<p>In this example, two interesting tasks are preformed: 1) the message box result is set to &rdquo;OK&rdquo;, which simulates the user clicking the button that represented OK. 2) This example passes some code as the second (optional) parameter, which allows
+ us to perform certain actions during the simulation. In this case, the &ldquo;SomeInputText&rdquo; property is set to &ldquo;Hello World&rdquo;. As a result, if we now make a call to Controller.Message(), the message will not be displayed on the screen but
+ instead, it will use these simulated results.</p>
+<p>Note that it is possible to queue as many items as are desired, since multiple message boxes may be executed within a single call to the object that is being tested. Consider the following example, which queues two results:</p>
+<div style="color:black">
+<pre>Controller.QueueMessageBoxResult(MessageBoxResults.OK,
+    m =&gt;
+    {
+        <span style="color:blue">var</span> vm = m <span style="color:blue">as</span> Message3ViewModel;
+        <span style="color:blue">if</span> (vm != <span style="color:blue">null</span>)
+            vm.SomeInputText = <span style="color:#a31515">&quot;Hello World!&quot;</span>;
+    });<br>Controller.QueueMessageBoxResult(MessageBoxResults.Cancel);</pre>
+</div>
+</div><div class="ClearBoth"></div>

@@ -1,0 +1,42 @@
+<div class="wikidoc">
+<p>This is an excerpt from an internal email at EPS/CODE, explaining improved features of the View-Visualizer tool:
+</p>
+<p>The main screen of the visualizer had some cosmetic improvements: </p>
+<p><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783839"><img title="clip_image001" border="0" alt="clip_image001" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783840" width="957" height="577" style="border-top:0px; border-right:0px; border-bottom:0px; border-left:0px; display:inline"></a>
+</p>
+<p>More importantly, the View Hierarchy display has been improved. Here’s the display that shows the styles for a selected textbox:
+</p>
+<p><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783841"><img title="clip_image002" border="0" alt="clip_image002" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783842" width="640" height="433" style="border-top:0px; border-right:0px; border-bottom:0px; border-left:0px; display:inline"></a>
+</p>
+<p>This shows a bit more detail. For instance, each property is not just listed as the property but also the class it goes with (such as “TextElement.FontSize” rather than just “FontSize”). Each styled property now shows not just the value or whether it is
+ bound to a style, but styles are now color coded in green (just like in Blend/VS) when the styles properties themselves are pointed to another resource. Also, when that is the case, the value that is currently brought in by that resource is now also shown.
+ Furthermore, when you pick one of those style properties, more information is now shown in a meaningful way. For instance, when you pick the FontFamily property, you see this:
+</p>
+<p><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783843"><img title="clip_image003" border="0" alt="clip_image003" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783844" width="663" height="611" style="border-top:0px; border-right:0px; border-bottom:0px; border-left:0px; display:inline"></a>
+</p>
+<p>Different elements show different detail. Some just show the actual value in a larger text area. Others, like the FontFamily element above, show custom settings. Another example is the display of brushes like this one:
+</p>
+<p><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783845"><img title="clip_image004" border="0" alt="clip_image004" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783846" width="504" height="341" style="border-top:0px; border-right:0px; border-bottom:0px; border-left:0px; display:inline"></a>
+</p>
+<p>One of the features that is most useful to me is that properties that themselved represent UI Elements (WPF objects) of some sort, are serialized back to XAML and displayed as such. For instance, when you pick a template of some sort, you will see something
+ like this: </p>
+<p><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783847"><img title="clip_image005" border="0" alt="clip_image005" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783848" width="698" height="544" style="border-top:0px; border-right:0px; border-bottom:0px; border-left:0px; display:inline"></a>
+</p>
+<p>I think that feature in particular was one of the most useful ones in my recent work on some performance improvement projects.
+</p>
+<p>In addition to showing styles and resources that apply to a control in the visual tree, the visualizer now shows a complete list of all (dependency) properties that go with the control, including color coding for data binding (yellow) and resources/styles
+ (green). And also, even for data bound properties, it shows the actual binding expression in detail, as well as the current value. Plus, you can select each property and see more detail (just like in the styles above):
+</p>
+<p><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783849"><img title="clip_image006" border="0" alt="clip_image006" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783850" width="993" height="1055" style="border-top:0px; border-right:0px; border-bottom:0px; border-left:0px; display:inline"></a>
+</p>
+<p>Finally, there now is a completely new tab for the view-model: </p>
+<p><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783851"><img title="clip_image007" border="0" alt="clip_image007" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783852" width="599" height="624" style="border-top:0px; border-right:0px; border-bottom:0px; border-left:0px; display:inline"></a>
+</p>
+<p>So this shows the view model properties in a way that makes it a bit more easy to see what is going on that to just look at the debugger window. It shows all properties and collections. It highlights things like collection item count. It highlights View-Actions
+ (blue) as well as all members that are based on standard view models (gold). (You can also mouse over to see a tooltip for items that are multiples of those).
+</p>
+<p>One of the nifty little details here is that if you select a member that is based on a standard view model, the detail visualizes the item using a standard view template, and you get to pick other templates if you wanted to see what it would look like if
+ that element was visualized with one of the default templates supported by the current theme:
+</p>
+<p><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783853"><img title="clip_image008" border="0" alt="clip_image008" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=783854" width="602" height="459" style="border-top:0px; border-right:0px; border-bottom:0px; border-left:0px; display:inline"></a></p>
+</div><div class="ClearBoth"></div>

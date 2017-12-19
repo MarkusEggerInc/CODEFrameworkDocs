@@ -1,0 +1,21 @@
+<div class="wikidoc">
+<h1>Fixing Service Hosting Security Errors</h1>
+<p>When self-hosting services, especially in development scenarios using the development service host, there are several reasons why one might experience security errors. This usually has to do with the environment already having HTTP handlers listening on
+ port 80, such as a development web server or IIS being active on a developer’s machine.</p>
+<p>&nbsp;</p>
+<h2>General Security Errors</h2>
+<p>There are several ways to fix general security errors that indicate a conflicting HTTP listener. It is possible to configure the system so certain URLs are excluded by other listeners. This is mostly overkill however. The easiest way to fix these problems
+ is to simply <strong>run Visual Studio with Administrator rights</strong>, which simply allows taking over those URLs while the development host is up and running, with no ill effects or system changes once the host shuts down.
+</p>
+<p>&nbsp;</p>
+<h2>Skype Problems</h2>
+<p>Sometimes, running Visual Studio as Admin does not fix the problem. We have discovered that this is often due to Skype running on the same machine (this problem may or may not be Windows 8 specific… we have only seen it on Windows 8).</p>
+<p>Here is an example of what this may look like: </p>
+<p><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=650399"><img title="clip_image002" border="0" alt="clip_image002" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=650400" width="840" height="454" style="border-top:0px; border-right:0px; border-bottom:0px; padding-top:0px; padding-left:0px; border-left:0px; display:inline; padding-right:0px"></a></p>
+<p>If this occurs while already running as Admin, or on a machine that seemingly shouldn’t have anything conflicting running, you can run the following command at the command prompt to find out a bit more:</p>
+<p><font face="Consolas">netstat -o -n -a | findstr 0.0:80 </font></p>
+<p>This will give you the Process ID of what is running on port 80.&nbsp; Armed with that information you can look in Task Manager to identify the culprit. The reason is likely that Skype now defaults to using port 80 and 443 for incoming connections. You can
+ turn it off (it requires a restart of Skype) in the options:</p>
+<p><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=650401"><img title="clip_image002[6]" border="0" alt="clip_image002[6]" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=650402" width="722" height="616" style="border-top:0px; border-right:0px; border-bottom:0px; padding-top:0px; padding-left:0px; border-left:0px; display:inline; padding-right:0px"></a></p>
+<p>Voila! This should fix the problem.</p>
+</div><div class="ClearBoth"></div>

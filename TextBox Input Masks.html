@@ -1,0 +1,231 @@
+<div class="wikidoc">
+<p>It is often desirable to limit input in textboxes to certain keystrokes only. For instance, a textbox may be designed to only accept numeric input, or only character input, and so forth. CODE Framework provides a standard mechanism for this by means of a
+ TextBoxEx class and its attached properties.</p>
+<h2>Standard Masked Input</h2>
+<p>CODE Framework provides a feature to create textboxes with masked input using standard input mask syntax. This can be used to create text fields for entering phone numbers. In addition, CODE Framework provides enhanced features for currency and decimal input.</p>
+<p>The feature is similar to other masked textbox classes/controls that are available. However, there are some key differences:</p>
+<ol>
+<li>In true CODE Framework fashion, we&nbsp;didn&rsquo;t want to create a separate control, but instead have an attached property that can be applied to any textbox control.
+</li><li>We&nbsp;wanted to support the standard MaskedTextProvider features .NET provides to make sure we support all those features&hellip;
+</li><li>&hellip;but also add some additional features that neither the default .NET functionality, nor any of the other controls handle well. In particular, this has to do with decimal entry and currency entry.
+</li></ol>
+<p>So here is how it basically works. If you want to create a textbox for currency entry, you can simply do this:</p>
+<p><code>&lt;TextBox controls:TextBoxEx.InputMask=&quot;$&quot;/&gt;</code></p>
+<p>Or, if you wanted to create a textbox for a US phone number, you can do this:</p>
+<p><code>&lt;TextBox controls:TextBoxEx.InputMask=&quot;(999) 999-9999&quot; /&gt;</code></p>
+<p>So the basic idea is pretty simple. The user can now only enter what you&rsquo;d expect. The Text property contains the full value as displayed. So if you used the phone number input mask, the actual Text of the control would be something like &ldquo;(832)
+ 717-4445&rdquo;. If that is what you want, you can simply bind the Text property. However, it is often also desirable to just get the value without any special mask characters. For that, we have a special property that can be used like this:</p>
+<p><code>&lt;TextBox controls:TextBoxEx.InputMask=&quot;(999) 999-9999&quot; controls:TextBoxEx.TextUnmasked=&quot;{Binding TestValue}&quot; /&gt;</code></p>
+<p>The unmasked text property then would contain &ldquo;8327174445&rdquo;. Similarly, for the currency textbox, the text would be something like &ldquo;$ 19.95&rdquo; (a string), while the unmasked version would simply be 19.95 (which is suitable to bind to
+ a decimal field.</p>
+<p>We also support a few extra features for currencies. Here is a more complete example:</p>
+<p><code>&lt;TextBox controls:TextBoxEx.InputMask=&quot;$&quot; controls:TextBoxEx.InputMaskCurrencySymbol=&quot;Z$&quot; controls:TextBoxEx.TextUnmasked=&quot;{Binding Amount}&quot; /&gt;</code></p>
+<p>This uses a currency format, but it uses Zimbabwe $ as the currency. This prevents the problem that often makes currency formats useless, because they are tied to the Windows UI currency. So if you have a machine that is set to Euros, the display mask would
+ actually switch to Euros, even though what you want to save may be US$.&nbsp;</p>
+<p>The currency handling (as well as generic decimal handling, which can be done by setting the mask to &ldquo;d&rdquo;) is quite special in our control. It handles a lot of special cases. For instance, many of the other masked textboxes do not handle correctly
+ when the user hits &ldquo;.&rdquo; as well as many other scenarios. So that should be quite helpful overall.</p>
+<p>So what are all the masks we support? Well, there are the &ldquo;$&rdquo; and the &ldquo;d&rdquo; masks that are special for CODE Framework. In addition, we support all standard mask strings as described in the MaskedTextProvider documentation:&nbsp;<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.mask(v=vs.110).aspx">https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.mask(v=vs.110).aspx</a></p>
+<p>&nbsp;The following table shows the supported mask characters:</p>
+<table summary="table">
+<tbody>
+<tr>
+<th scope="col">
+<p>Masking element</p>
+</th>
+<th scope="col">
+<p>Description</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>$</p>
+</td>
+<td>
+<p>Currency input (decimal, with configurable or default currency symbol based on current UI culture settings). See below for information about negative values.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>d</p>
+</td>
+<td>
+<p>Decimal input. See below for information about negative values and number of digits allowed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>%</p>
+</td>
+<td>
+<p>Percentage input. Similar to decimal, but with a trailing&nbsp;% symbol. See below for information about negative values and number of digits allowed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>Digit, required. This element will accept any single digit between 0 and 9.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>9</p>
+</td>
+<td>
+<p>Digit or space, optional.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>#</p>
+</td>
+<td>
+<p>Digit or space, optional. If this position is blank in the mask, it will be rendered as a space in the&nbsp;<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.text(v=vs.110).aspx">Text</a>&nbsp;property. Plus (&#43;) and minus
+ (-) signs are allowed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>L</p>
+</td>
+<td>
+<p>Letter, required. Restricts input to the ASCII letters a-z and A-Z. This mask element is equivalent to [a-zA-Z] in regular expressions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>?</p>
+</td>
+<td>
+<p>Letter, optional. Restricts input to the ASCII letters a-z and A-Z. This mask element is equivalent to [a-zA-Z]? in regular expressions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>&amp;</p>
+</td>
+<td>
+<p>Character, required. If the&nbsp;<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.asciionly(v=vs.110).aspx">AsciiOnly</a>&nbsp;property is set to true, this element behaves like the &quot;L&quot; element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>C</p>
+</td>
+<td>
+<p>Character, optional. Any non-control character. If the&nbsp;<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.asciionly(v=vs.110).aspx">AsciiOnly</a>&nbsp;property is set to&nbsp;<strong>true</strong>, this element behaves
+ like the &quot;?&quot; element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>A</p>
+</td>
+<td>
+<p>Alphanumeric, required. If the&nbsp;<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.asciionly(v=vs.110).aspx">AsciiOnly</a>&nbsp;property is set to&nbsp;<strong>true</strong>, the only characters it will accept are the
+ ASCII letters a-z and A-Z. This mask element behaves like the &quot;a&quot; element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>a</p>
+</td>
+<td>
+<p>Alphanumeric, optional. If the&nbsp;<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.asciionly(v=vs.110).aspx">AsciiOnly</a>&nbsp;property is set to&nbsp;<strong>true</strong>, the only characters it will accept are the
+ ASCII letters a-z and A-Z. This mask element behaves like the &quot;A&quot; element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>.</p>
+</td>
+<td>
+<p>Decimal placeholder. The actual display character used will be the decimal symbol appropriate to the format provider, as determined by the control's&nbsp;<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.formatprovider(v=vs.110).aspx">FormatProvider</a>&nbsp;property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>,</p>
+</td>
+<td>
+<p>Thousands placeholder. The actual display character used will be the thousands placeholder appropriate to the format provider, as determined by the control's&nbsp;<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.formatprovider(v=vs.110).aspx">FormatProvider</a>&nbsp;property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>:</p>
+</td>
+<td>
+<p>Time separator. The actual display character used will be the time symbol appropriate to the format provider, as determined by the control's&nbsp;<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.formatprovider(v=vs.110).aspx">FormatProvider</a>&nbsp;property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>/</p>
+</td>
+<td>
+<p>Date separator. The actual display character used will be the date symbol appropriate to the format provider, as determined by the control's&nbsp;<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox.formatprovider(v=vs.110).aspx">FormatProvider</a>&nbsp;property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>&lt;</p>
+</td>
+<td>
+<p>Shift down. Converts all characters that follow to lowercase.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>&gt;</p>
+</td>
+<td>
+<p>Shift up. Converts all characters that follow to uppercase.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>|</p>
+</td>
+<td>
+<p>Disable a previous shift up or shift down.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>\</p>
+</td>
+<td>
+<p>Escape. Escapes a mask character, turning it into a literal. &quot;\\&quot; is the escape sequence for a backslash.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>All other characters</p>
+</td>
+<td>
+<p>Literals. All non-mask elements will appear as themselves within&nbsp;<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.maskedtextbox(v=vs.110).aspx">MaskedTextBox</a>. Literals always occupy a static position in the mask at run time,
+ and cannot be moved or deleted by the user.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Decimal (d), currency ($), and percentage (%) formatted fields also support negative values. However, this can be disabled by setting TextBoxEx.InputMaskSupportsNegative to false.</p>
+<p>The number of digits allowed to the left of the decimal point (the &quot;characteristic&quot; of the entered value) for decimal (d), currency ($), and percentage (%) formatted fields is defined through the TextBoxEx.InputMaskDecimalCharacteristicMask property. The
+ default is &quot;###.###.###.##0&quot;, which allows for 12 digits to the left of the decimal point.</p>
+<p>The number of digits allowed to the right of the decimal point (known as the &quot;mantissa&quot;) for decimal (d) and percentage (%) formatted fields is defined through the TextBoxEx.InputMaskDecimalFractionalMask property. The default is &quot;00&quot;, which calls for 2
+ fractional/mantissa digits being entered. For currency ($) format, the number of mantissa digits are driven by currency system settings.</p>
+<p>&nbsp;</p>
+<h2>Regular Expression Input Masks</h2>
+<p>Consider the following example:</p>
+<div style="color:black">
+<pre><span style="color:blue">&lt;</span><span style="color:#a31515">Window</span> <span style="color:red">x:Class</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">CODE.Framework.Wpf.TestBench.TextBoxTest</span><span style="color:black">&quot;<br></span>        <span style="color:red">xmlns</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">http://schemas.microsoft.com/winfx/2006/xaml/presentation</span><span style="color:black">&quot;<br></span>        <span style="color:red">xmlns:x</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">http://schemas.microsoft.com/winfx/2006/xaml</span><span style="color:black">&quot;<br></span>        <span style="color:red">xmlns:controls</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">clr-namespace:CODE.Framework.Wpf.Controls;assembly=CODE.Framework.Wpf</span><span style="color:black">&quot;<br></span>        <span style="color:red">Title</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">TextBoxTest</span><span style="color:black">&quot;</span> <span style="color:red">Height</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">300</span><span style="color:black">&quot;</span> <span style="color:red">Width</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">300</span><span style="color:black">&quot;</span><span style="color:blue">&gt;<br></span>    <span style="color:blue">&lt;</span><span style="color:#a31515">StackPanel</span><span style="color:blue">&gt;<br></span>        <span style="color:blue">&lt;</span><span style="color:#a31515">TextBox</span> <span style="color:red">controls:TextBoxEx.InputMaskRegEx</span><span style="color:blue">=</span><span style="color:black">&quot;</span><span style="color:blue">^\p{L}*$</span><span style="color:black">&quot;</span> <span style="color:blue">/&gt;<br></span>    <span style="color:blue">&lt;/</span><span style="color:#a31515">StackPanel</span><span style="color:blue">&gt;<br></span><span style="color:blue">&lt;/</span><span style="color:#a31515">Window</span><span style="color:blue">&gt;</span></pre>
+</div>
+<p>In this case, the input in the textbox is limited by means of a regular expression to accept only alpha characters. You can use different regular expressions to limit input to different keystrokes.</p>
+<p>Note: This only works for regular expressions that are generic enough to match any keystroke. The expression used in the above example matches all alpha characters. Thus when the user presses a key such as &ldquo;a&rdquo;, the expression matches and thus
+ the input is allowed. When the user then presses &ldquo;b&rdquo;, the complete text is now &ldquo;ab&rdquo;, which still matches the expression, and the input is allowed. Expressions that requires a specific combination of input elements are more problematic.
+ For instance, if you use a regular expression that matches an email address, then that requires some text, followed by the @ symbol, followed by more text, a dot, and some more text. However, then the user starts out with an empty textbox and then presses
+ &ldquo;a&rdquo;, then &ldquo;a&rdquo; does not match the regular expression since it is missing elements such as the @ symbol and so the input is considered invalid and the user can never really type in a complete email address. Using a RegEx input mask is
+ not appropriate for such a scenario.</p>
+</div><div class="ClearBoth"></div>
