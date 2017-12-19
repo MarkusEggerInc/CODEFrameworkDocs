@@ -2,7 +2,7 @@ _The following is an excerpt from an internal email at EPS/CODE related to creat
 
 Here’s the main code snippet that is responsible for the background colors:
 
-{code:xml}
+```
 <Style TargetType="ListBox" x:Key="Metro-Control-ListBox-Columns" BasedOn="{StaticResource Metro-Control-ListBox-Stack}">
     <Style.Resources>
         <Style TargetType="ListBoxItem">
@@ -28,7 +28,8 @@ Here’s the main code snippet that is responsible for the background colors:
             </Setter>
         </Style>
     </Style.Resources>
-{code:xml}
+</Style>
+```
 
 The basic idea is actually pretty simple: This defines a style for a ListBox. Then within that style’s resources, I define another style for ListBoxItem. So this basically means “use this listboxitem style automatically/implicitly for all items within this listbox”. It’s WPF’s equivalent of a CSS rule that applies for a certain element within another element… so in CSS this would probably be written as: .Metro-Control-ListBox-Columns ListBoxItem {}
 
