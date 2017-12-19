@@ -8,12 +8,20 @@ Another new feature is that we now also have an AllThemes resource file. So in a
 
 So the overall theme loading sequence for views is now this:
 
+```raw
 View.xaml
 View.AllThemes.xaml
-View.AllThemes.[X](X).xaml
-View.[Theme](Theme).xaml
-View.[Theme](Theme).[X](X)xaml
+View.AllThemes.[0].xaml
+View.AllThemes.[1].xaml
+View.AllThemes.[n].xaml
+View.[Theme].xaml
+View.[Theme].[0].xaml
+View.[Theme].[1].xaml
+View.[Theme].[n].xaml
 View.Layout.xaml
-View.Layout.[X](X).xaml
+View.Layout.[0].xaml
+View.Layout.[1].xaml
+View.Layout.[n].xaml
+```
 
 Note that the sequence can be significant in cases where you might have resources of the same name defined multiple times. Last one always wins in that case. So this is another reason why we added the AllThemes version, since that is loaded before the other themes, while Layout is loaded afterwards.
