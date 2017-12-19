@@ -49,21 +49,21 @@ This allows calling the following method in the controller:
 
 ```c#
 public ActionResult CustomerName(ParameterType parameter) 
- { 
-     // Do whatever with the parameter
-     return PartialView();  
- }
- ```
+{ 
+   // Do whatever with the parameter
+   return PartialView();  
+}
+```
 
 Note that the parameter doesn’t have to be called “parameter”. CODE Framework matches single-parameter action methods by parameter type if the name doesn’t match, hence this parameter can be called anything you would like it to be, as long as the type matches:
 
 ```c#
 public ActionResult CustomerName(ParameterType parentModel) 
- { 
-     // Do whatever with the parameter
-     return PartialView();  
- }
- ```
+{ 
+   // Do whatever with the parameter
+   return PartialView();  
+}
+```
 
 As a side-note: I now added a new method to the static Controller class. In addition to Controller.Action(controller, method), which calls the specified method on the specified controller and returns a view and possibly a model, you can now take a shortcut for controller methods that only return a view using Controller.ViewOnly(view). So you can do this:
 
