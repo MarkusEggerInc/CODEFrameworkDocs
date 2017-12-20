@@ -111,7 +111,9 @@ namespace MyConfig
       }
 
       public override void Read()
-      {     XmlDocument dom = null;       XmlNode node = null;
+      {     
+         XmlDocument dom = null;
+         XmlNode node = null;
 
          fiSettingsFile = new FileInfo(file);
          Settings.Clear();
@@ -131,7 +133,6 @@ namespace MyConfig
          XmlDocument dom = null;
          XmlNode node = null;
 
-         
          fiSettingsFile = new FileInfo(file);
          dom = new XmlDocument();
          dom.Load(this.fiSettingsFile.ToString());
