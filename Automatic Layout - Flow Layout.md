@@ -1,22 +1,25 @@
-﻿Among the unique values CODE Framework brings to WPF development is the ability to apply automatic layouts to UIs, or part of UIs. One such example is the EditForm layout (see also: [Automatic Layout and Elasticity](Automatic%20Layout%20and%20Elasticity)). Another, more recent addition, is FlowForm layout. Here’s an example of what a flow form looks like:  
+﻿# Automatic Layout - Flow Layout
 
-![](file:///C:\Projects\CODE.Framework\Framework\Docs\Automatic%20Layout%20-%20Flow%20Layout\Automatic%20Layout%20-%20Flow%20Layout_clip_image001_2.jpg)
+Among the unique values CODE Framework brings to WPF development is the ability to apply automatic layouts to UIs, or part of UIs. One such example is the EditForm layout (see also: [Automatic Layout and Elasticity](Automatic%20Layout%20and%20Elasticity)). Another, more recent addition, is FlowForm layout. Here’s an example of what a flow form looks like:  
+
+
+![](Automatic%20Layout%20-%20Flow%20Layout/Automatic%20Layout%20-%20Flow%20Layout_clip_image001.jpg)
 
 The basic idea behind the flow form is that controls are flowed in left-to-right until a line is full or a manual line break is encountered. The flow form still does some smart things, such as making sure all the first labels in a row have an equal width.  
 
 When the form is resized, controls may flow to the next row (note how the Number field is pushed over to the next row, and all the textboxes left edges still line up properly):  
 
-[![clip_image001[6]](http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=743795 "clip_image001[6]")](http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=743794)  
+![](Automatic%20Layout%20-%20Flow%20Layout/Automatic%20Layout%20-%20Flow%20Layout_clip_image002.jpg)
 
 Note that the flow form is smart about handling checkboxes and radio buttons, which tend to re-flow a bit different. Note also how in the following example, both Facility Type checkboxes have been pushed to the next line, even though one of them would have still fit:  
 
-[![clip_image001[8]](http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=743797 "clip_image001[8]")](http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=743796)  
+![](Automatic%20Layout%20-%20Flow%20Layout/Automatic%20Layout%20-%20Flow%20Layout_clip_image003.jpg)
 
 So this creates a much nicer layout with both checkboxes moved to the next line with the matching “Facility Type” label. If only the “Existing” checkbox would have been moved to the next line, things would have been rather awkward, to say the least.  
 
 Eventually of course, when the form gets too narrow, the individual checkboxes start to flow like this:  
 
-[![clip_image001[10]](http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=743799 "clip_image001[10]")](http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=743798)  
+![](Automatic%20Layout%20-%20Flow%20Layout/Automatic%20Layout%20-%20Flow%20Layout_clip_image004.jpg)
 
 This behavior can be turned on and off with a property, btw.  
 

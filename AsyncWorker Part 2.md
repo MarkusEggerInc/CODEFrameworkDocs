@@ -6,7 +6,7 @@ We have been working on performance improving a client application. In that, the
 
 When loading data initially, we have code in a view model like this:
 
-[![clip_image001](http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=743757 "clip_image001")](http://download-codeplex.sec.s-msft.com/Download?ProjectName=codeframework&DownloadId=743756)
+![](AsnycWorker%20Part%202/AsyncWorker%20Part%202_clip_image001_2.jpg)
 
 So this uses the AsyncWorker to load on a background thread (which is good) and it then loads Drivers, Loaders, and Checkers one after the other on the background thread. What is interesting to note here is that it first loads Drivers from the service, waits for the result, then loads Lo!aders and waits for the result, and then loads Checkers and waits for the result, before passing it all back to the foreground method. It’s good that this happens on a background thread, so the UI is not blocked while all of this loading is going on. However, what is bad is that these 3 load operations happen sequentially. Lots of waiting with a non-busy CPU for no particular reason. What would be better is if these 3 load operations all happened at the same time on 3 different background threads. A simple change would thus be this:
 
