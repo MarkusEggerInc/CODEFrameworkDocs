@@ -39,11 +39,48 @@
           "title": "Fundamentals"
         },
         {
-          "title": "Services"
+          "title": "Services",
+          "topics": [
+            {
+              "title": "Server-Side Hosting",
+              "topics": [
+                {
+                  "title": "WCF HTTPS Service Hosting",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CODE%20Framework%20WCF%20HTTPS%20Service%20Hosting.md"
+                },
+                {
+                  "title": "CORS Support in ServiceHostController",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CORS%20Support%20in%20ServiceHostController.md"
+                }
+              ]
+            },
+            {
+              "title": "Client-Side Calling",
+              "topics": [
+                {
+                  "title": "Calling REST Services through ServiceClient",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Calling%20REST%20Services%20through%20ServiceClient.md"
+                }
+              ]
+            }
+          ]
         },
         {
           "title": "WPF",
           "topics": [
+            {
+              "title": "Binding the UI to Data",
+              "topics": [
+                {
+                  "title": "Bind, Security, and Input Validation",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Bind%2C%20Security%2C%20and%20Input%20Validation.md"
+                },
+                {
+                  "title": "Binding to Enums",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Binding%20to%20Enums.md"
+                }
+              ]
+            },
             {
               "title": "Understanding Layout and Visuals",
               "topics": [
@@ -73,6 +110,10 @@
               "title": "Understanding View-Models",
               "topics": [
                 {
+                  "title": "Async Worker",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CODE%20Framework%20AsyncWorker.md"
+                },
+                {
                   "title": "Async Worker - Part 2",
                   "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/AsyncWorker%20Part%202.md"
                 },
@@ -92,6 +133,10 @@
                 {
                   "title": "Activating Existing/Loaded Views",
                   "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Activating%20Existing%20Views.md"
+                },
+                {
+                  "title": "Configuration System",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CODE%20Framework%20Configuration%20System.md"
                 }
               ]
             }
