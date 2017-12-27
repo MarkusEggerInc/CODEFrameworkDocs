@@ -45,8 +45,12 @@
           "title": "WPF",
           "topics": [
             {
-              "title": "Understanding Layout",
+              "title": "Understanding Layout and Visuals",
               "topics": [
+                {
+                  "title": "Auto-Complete UIs",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Auto-Complete%20in%20WPF%20UIs.md"
+                },
                 {
                   "title": "Automatic Layout - Bidirectional Stack Panel",
                   "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Bidirectional%20Stack%20Panel.md"
@@ -69,8 +73,25 @@
               "title": "Understanding View-Models",
               "topics": [
                 {
+                  "title": "Async Worker - Part 2",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/AsyncWorker%20Part%202.md"
+                },
+                {
                   "title": "Standard View-Models Tips",
                   "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/StandardViewModel%20Tips.md"
+                }
+              ]
+            },
+            {
+              "title": "General Framework Topics",
+              "topics": [
+                {
+                  "title": "Accessing the Shell Object",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Accessing%20the%20Shell%20object.md"
+                },
+                {
+                  "title": "Activating Existing/Loaded Views",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Activating%20Existing%20Views.md"
                 }
               ]
             }
