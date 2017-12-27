@@ -1,2 +1,30 @@
 {
+  "title": "CODE Framework Documentation",
+  "owner": "Markus Egger Inc.",
+  "language": "en-US",
+  "version": "1.0",
+  "topics": [
+    {
+      "title": "Getting Started",
+      "githublink": "",
+      "isExpanded": true
+      "topics": [
+        {
+          "title": "Installing the Framework",
+          "githublink": "",
+        },
+      ]
+    },
+    {
+      "title": "What's New?",
+      "githublink": "",
+      "isExpanded": true
+      "topics": [
+        {
+          "title": "Framework Change Log",
+          "githublink": "",
+        },
+      ]
+    },
+  ]
 }
