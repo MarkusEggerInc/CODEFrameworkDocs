@@ -7,24 +7,64 @@
     {
       "title": "Getting Started",
       "githublink": "",
-      "isExpanded": true
+      "isExpanded": true,
       "topics": [
         {
           "title": "Installing the Framework",
-          "githublink": "",
-        },
+          "githublink": ""
+        }
       ]
     },
     {
       "title": "What's New?",
       "githublink": "",
-      "isExpanded": true
+      "isExpanded": true,
       "topics": [
         {
           "title": "Framework Change Log",
-          "githublink": "",
+          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CODE%20Framework%20(.NET)%20Change%20Log.md"
         },
+        {
+          "title": "Tools Change Log",
+          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CODE%20Framework%20Tools%20Change%20Log.md"
+        }
       ]
     },
+    {
+      "title": "Developing with CODE Framework",
+      "githublink": "",
+      "isExpanded": true,
+      "topics": [
+        {
+          "title": "Fundamentals"
+        },
+        {
+          "title": "Services"
+        },
+        {
+          "title": "WPF",
+          "topics": [
+            {
+              "title": "Understanding Layout",
+              "topics": [
+                {
+                  "title": "Automatic Layout - Bidirectional Stack Panel",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Bidirectional%20Stack%20Panel.md"
+                },
+                {
+                  "title": "Automatic Layout - Edit Form",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Automatic%20Layout%20and%20Elasticity.md"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Class Reference",
+      "githublink": "",
+      "isExpanded": false
+    }
   ]
 }
