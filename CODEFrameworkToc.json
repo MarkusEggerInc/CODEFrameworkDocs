@@ -54,6 +54,14 @@
                 {
                   "title": "Automatic Layout - Edit Form",
                   "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Automatic%20Layout%20and%20Elasticity.md"
+                },
+                {
+                  "title": "Automatic Layout - Flow Layout",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Automatic%20Layout%20-%20Flow%20Layout.md"
+                },
+                {
+                  "title": "Automatic Layout - Multi-Panel Layout",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Automatic%20Layout%20-%20MultiPanel.md"
                 }
               ]
             }
