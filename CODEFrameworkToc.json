@@ -64,6 +64,15 @@
                   "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Automatic%20Layout%20-%20MultiPanel.md"
                 }
               ]
+            },
+            {
+              "title": "Understanding View-Models",
+              "topics": [
+                {
+                  "title": "Standard View-Models Tips",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/StandardViewModel%20Tips.md"
+                }
+              ]
             }
           ]
         }
