@@ -36,7 +36,17 @@
       "isExpanded": true,
       "topics": [
         {
-          "title": "Fundamentals"
+          "title": "Fundamentals",
+          "topics": [
+            {
+              "title": "JSON Features",
+              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/JSON%20Features.md"
+            },
+            {
+              "title": "ObjectHelper and Complex Paths",
+              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/ObjectHelper%20and%20Complex%20Paths.md"
+            }
+          ]
         },
         {
           "title": "Services",
@@ -51,6 +61,10 @@
                 {
                   "title": "CORS Support in ServiceHostController",
                   "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CORS%20Support%20in%20ServiceHostController.md"
+                },
+                {
+                  "title": "Creating REST Services",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Creating%20REST%20Services.md"
                 }
               ]
             },
