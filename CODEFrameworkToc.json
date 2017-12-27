@@ -135,6 +135,10 @@
                   "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Activating%20Existing%20Views.md"
                 },
                 {
+                  "title": "CanExecute on View Actions",
+                  "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CanExecute%20on%20ViewActions.md"
+                },
+                {
                   "title": "Configuration System",
                   "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CODE%20Framework%20Configuration%20System.md"
                 }
