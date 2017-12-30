@@ -7,7 +7,6 @@
     {
       "title": "Getting Started",
       "githublink": "",
-      "isExpanded": true,
       "topics": [
         {
           "title": "Installing the Framework",
@@ -18,7 +17,6 @@
     {
       "title": "What's New?",
       "githublink": "",
-      "isExpanded": true,
       "topics": [
         {
           "title": "Framework Change Log",

@@ -1,4 +1,4 @@
-﻿# CODE Framework Configuration System
+﻿# Configuration System
 
 CODE Framework provides a native system that allows developers to query application settings. This is similar to using the ConfigurationSettings class provided by the .NET Framework, but the CODE Framework Configuration System is much more powerful as it fully supports everything in the .NET configuration system, but also a lot more. For this reason, developers should always use the CODE Framework system.
 
