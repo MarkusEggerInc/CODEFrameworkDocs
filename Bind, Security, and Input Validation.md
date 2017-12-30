@@ -23,7 +23,9 @@ CODE Framework has always had features that use the built-in security system in 
 So here is how it works: On any WPF UI Element, you can now set attached properties to define security. For instance, you can now do this:
 
 ```
-<TextBox Text="Secret!" sec:Security.FullAccessRoles="Super Admin, Super Hero" sec:Security.ReadOnlyRoles="Normal Admin" />
+<TextBox Text="Secret!" 
+         sec:Security.FullAccessRoles="Super Admin, Super Hero" 
+         sec:Security.ReadOnlyRoles="Normal Admin" />
 ```
 
 So this is pretty straightforward. If the current user happens to be in either the “Super Admin” or “Super Hero” roles, the user can edit the textbox. (Note: Users can have any number of assigned roles, but as long as one of the user’s roles is one of the two, full access is granted). Similarly, if the user is in the “Normal Admin” role, read-only access is granted. (Note: If the user is both a “Normal Admin” and a “Super Admin”, then full access is granted). This works on any and all WPF UI Elements. (Note: Some elements, such as textboxes, support a true read-only states, which is used by the security system. For other controls, the system simply disables the control to use the disabled state as a poor-man’s read-only flag).
