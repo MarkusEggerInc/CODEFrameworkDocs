@@ -109,8 +109,20 @@
               "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Auto-Complete%20in%20WPF%20UIs.md"
             },
             {
+              "title": "Icons - Theme Icons",
+              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Theme%20Icons.md"
+            },
+            {
+              "title": "Odd and Even Row Background Colors in Lists",
+              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Odd%20and%20Even%20Row%20Background%20Color%20in%20Lists.md"
+            },
+            {
               "title": "Range Slider",
               "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/RangeSlider%20Control.md"
+            },
+            {
+              "title": "Ribbon - Setting a Default Page",
+              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Ribbon%20-%20Setting%20a%20Default%20Page.md"
             },
             {
               "title": "Text Boxes - Select on Entry",
@@ -138,20 +150,8 @@
               "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Automatic%20Layout%20-%20MultiPanel.md"
             },
             {
-              "title": "Icons - Theme Icons",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Theme%20Icons.md"
-            },
-            {
               "title": "Layout - Setting Generic/Abstract Dimensions on Controls",
               "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Setting%20Generic%20and%20Abstract%20Control%20Dimensions%20in%20WPF.md"
-            },
-            {
-              "title": "Odd and Even Row Background Colors in Lists",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Odd%20and%20Even%20Row%20Background%20Color%20in%20Lists.md"
-            },
-            {
-              "title": "Ribbon - Setting a Default Page",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Ribbon%20-%20Setting%20a%20Default%20Page.md"
             },
             {
               "title": "Styling - MVVM Shell Styling Tips",
