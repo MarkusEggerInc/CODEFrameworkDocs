@@ -102,12 +102,25 @@
           ]
         },
         {
-          "title": "Layout and Visuals",
+          "title": "Controls",
           "topics": [
             {
               "title": "Auto-Complete UIs",
               "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Auto-Complete%20in%20WPF%20UIs.md"
             },
+            {
+              "title": "Range Slider",
+              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Auto-Complete%20in%20WPF%20UIs.md"
+            },
+            {
+              "title": "Text Boxes - Select on Entry",
+              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Select%20WPF%20TextBoxes%20on%20Entry.md"
+            }
+          ]
+        },
+        {
+          "title": "Layout and Visuals",
+          "topics": [
             {
               "title": "Automatic Layout - Bidirectional Stack Panel",
               "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Bidirectional%20Stack%20Panel.md"
@@ -147,10 +160,6 @@
             {
               "title": "Themes - Simplified Resource Dictionary Download",
               "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/WPF%20Theme%20Resource%20Dictionary%20Download.md"
-            },
-            {
-              "title": "Text Boxes - Select on Entry",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Select%20WPF%20TextBoxes%20on%20Entry.md"
             }
           ]
         },
