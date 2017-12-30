@@ -31,23 +31,6 @@
       ]
     },
     {
-      "title": "General Topics",
-      "topics": [
-        {
-          "title": "JSON Features",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/JSON%20Features.md"
-        },
-        { 
-          "title": "ObjectHelper and Complex Paths",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/ObjectHelper%20and%20Complex%20Paths.md"
-        },
-        {
-          "title": "TransparentProxyGenerator",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Using%20the%20Transparent%20Proxy%20Generator.md"
-        }
-      ]
-    },
-    {
       "title": "Services: Server-Side Hosting",
       "topics": [
         {
@@ -233,6 +216,23 @@
               "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/WPF%20ImageHelper.md"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "General Topics",
+      "topics": [
+        {
+          "title": "JSON Features",
+          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/JSON%20Features.md"
+        },
+        { 
+          "title": "ObjectHelper and Complex Paths",
+          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/ObjectHelper%20and%20Complex%20Paths.md"
+        },
+        {
+          "title": "TransparentProxyGenerator",
+          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Using%20the%20Transparent%20Proxy%20Generator.md"
         }
       ]
     }
