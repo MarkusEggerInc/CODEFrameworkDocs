@@ -135,6 +135,9 @@
               "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Setting%20Generic%20and%20Abstract%20Control%20Dimensions%20in%20WPF.md"
             },
             {
+              "title": "Metro ListBoxes in WPF",
+              "githublink": "Metro%20ListBoxes%20in%20WPF.html"
+            },            {
               "title": "Styling - MVVM Shell Styling Tips",
               "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/WPF%20MVVM%20Shell%20Styling%20Tips.md"
             },
