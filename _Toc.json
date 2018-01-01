@@ -137,11 +137,12 @@
             {
               "title": "MessageBoxes in WPF MVVM/MVC",
               "githublink": "MessageBoxes%20in%20WPF%20MVVM_MVC.html"
-            },            {
+            },            
             {
               "title": "Metro ListBoxes in WPF",
               "githublink": "Metro%20ListBoxes%20in%20WPF.html"
-            },            {
+            },            
+            {
               "title": "Styling - MVVM Shell Styling Tips",
               "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/WPF%20MVVM%20Shell%20Styling%20Tips.md"
             },
