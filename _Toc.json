@@ -20,11 +20,11 @@
       "topics": [
         {
           "title": "Framework Change Log",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CODE%20Framework%20(.NET)%20Change%20Log.md"
+          "githublink": "CODE%20Framework%20(.NET)%20Change%20Log.md"
         },
         {
           "title": "Tools Change Log",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CODE%20Framework%20Tools%20Change%20Log.md"
+          "githublink": "CODE%20Framework%20Tools%20Change%20Log.md"
         }
       ]
     },
@@ -33,23 +33,23 @@
       "topics": [
         {
           "title": "WCF HTTPS Service Hosting",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CODE%20Framework%20WCF%20HTTPS%20Service%20Hosting.md"
+          "githublink": "CODE%20Framework%20WCF%20HTTPS%20Service%20Hosting.md"
         },
         {
           "title": "WCF Self-Hosted Service Concurrency",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/WCF%20Self-Hosted%20Service%20Concurrency.md"
+          "githublink": "WCF%20Self-Hosted%20Service%20Concurrency.md"
         },
         {
           "title": "CORS Support in ServiceHostController",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CORS%20Support%20in%20ServiceHostController.md"
+          "githublink": "CORS%20Support%20in%20ServiceHostController.md"
         },
         {
           "title": "Creating REST Services",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Creating%20REST%20Services.md"
+          "githublink": "Creating%20REST%20Services.md"
         },
         {
           "title": "WebApi Service Hosting",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/WebApi%20Service%20Hosting.md"
+          "githublink": "WebApi%20Service%20Hosting.md"
         }
       ]
     },
@@ -58,11 +58,11 @@
       "topics": [
         {
           "title": "Calling REST Services through ServiceClient",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Calling%20REST%20Services%20through%20ServiceClient.md"
+          "githublink": "Calling%20REST%20Services%20through%20ServiceClient.md"
         },
         {
           "title": "ServiceClient Events",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/ServiceClient%20Events.md"
+          "githublink": "ServiceClient%20Events.md"
         }
       ]
     },
@@ -74,11 +74,11 @@
           "topics": [
             {
               "title": "Bind, Security, and Input Validation",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Bind%2C%20Security%2C%20and%20Input%20Validation.md"
+              "githublink": "Bind%2C%20Security%2C%20and%20Input%20Validation.md"
             },
             {
               "title": "Binding to Enums",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Binding%20to%20Enums.md"
+              "githublink": "Binding%20to%20Enums.md"
             }
           ]
         },
@@ -87,27 +87,27 @@
           "topics": [
             {
               "title": "Auto-Complete UIs",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Auto-Complete%20in%20WPF%20UIs.md"
+              "githublink": "Auto-Complete%20in%20WPF%20UIs.md"
             },
             {
               "title": "Icons - Theme Icons",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Theme%20Icons.md"
+              "githublink": "Theme%20Icons.md"
             },
             {
               "title": "Odd and Even Row Background Colors in Lists",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Odd%20and%20Even%20Row%20Background%20Color%20in%20Lists.md"
+              "githublink": "Odd%20and%20Even%20Row%20Background%20Color%20in%20Lists.md"
             },
             {
               "title": "Range Slider",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/RangeSlider%20Control.md"
+              "githublink": "RangeSlider%20Control.md"
             },
             {
               "title": "Ribbon - Setting a Default Page",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Ribbon%20-%20Setting%20a%20Default%20Page.md"
+              "githublink": "Ribbon%20-%20Setting%20a%20Default%20Page.md"
             },
             {
               "title": "Text Boxes - Select on Entry",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Select%20WPF%20TextBoxes%20on%20Entry.md"
+              "githublink": "Select%20WPF%20TextBoxes%20on%20Entry.md"
             }
           ]
         },
@@ -116,19 +116,19 @@
           "topics": [
             {
               "title": "Automatic Layout - Bidirectional Stack Panel",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Bidirectional%20Stack%20Panel.md"
+              "githublink": "Bidirectional%20Stack%20Panel.md"
             },
             {
               "title": "Automatic Layout - Edit Form",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Automatic%20Layout%20and%20Elasticity.md"
+              "githublink": "Automatic%20Layout%20and%20Elasticity.md"
             },
             {
               "title": "Automatic Layout - Flow Layout",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Automatic%20Layout%20-%20Flow%20Layout.md"
+              "githublink": "Automatic%20Layout%20-%20Flow%20Layout.md"
             },
             {
               "title": "Automatic Layout - Multi-Panel Layout",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Automatic%20Layout%20-%20MultiPanel.md"
+              "githublink": "Automatic%20Layout%20-%20MultiPanel.md"
             },
             {
               "title": "Layout - Setting Generic/Abstract Dimensions on Controls",
@@ -144,11 +144,11 @@
             },            
             {
               "title": "Styling - MVVM Shell Styling Tips",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/WPF%20MVVM%20Shell%20Styling%20Tips.md"
+              "githublink": "WPF%20MVVM%20Shell%20Styling%20Tips.md"
             },
             {
               "title": "Themes - Simplified Resource Dictionary Download",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/WPF%20Theme%20Resource%20Dictionary%20Download.md"
+              "githublink": "WPF%20Theme%20Resource%20Dictionary%20Download.md"
             }
           ]
         }, 
@@ -157,19 +157,19 @@
           "topics": [
             {
               "title": "Async Worker",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CODE%20Framework%20AsyncWorker.md"
+              "githublink": "CODE%20Framework%20AsyncWorker.md"
             },
             {
               "title": "Async Worker - Part 2",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/AsyncWorker%20Part%202.md"
+              "githublink": "AsyncWorker%20Part%202.md"
             },
             {
               "title": "Standard Views and View-Models",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Standard%20Views%20and%20View%20Models.md"
+              "githublink": "Standard%20Views%20and%20View%20Models.md"
             },
             {
               "title": "Standard View-Models Tips",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/StandardViewModel%20Tips.md"
+              "githublink": "StandardViewModel%20Tips.md"
             }
           ]
         },
@@ -178,15 +178,15 @@
           "topics": [
             {
               "title": "Partial Views",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Partial%20Views%20in%20CODE%20Framework%20WPF.md"
+              "githublink": "Partial%20Views%20in%20CODE%20Framework%20WPF.md"
             },
             {
               "title": "Reacting when Views Close",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Reacting%20when%20Views%20Close.md"
+              "githublink": "Reacting%20when%20Views%20Close.md"
             },
             {
               "title": "Standard Views and View-Models",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Standard%20Views%20and%20View%20Models.md"
+              "githublink": "Standard%20Views%20and%20View%20Models.md"
             }
           ]
         },
@@ -195,31 +195,31 @@
           "topics": [
             {
               "title": "Accessing the Shell Object",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Accessing%20the%20Shell%20object.md"
+              "githublink": "Accessing%20the%20Shell%20object.md"
             },
             {
               "title": "Activating Existing/Loaded Views",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Activating%20Existing%20Views.md"
+              "githublink": "Activating%20Existing%20Views.md"
             },
             {
               "title": "CanExecute on View Actions",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CanExecute%20on%20ViewActions.md"
+              "githublink": "CanExecute%20on%20ViewActions.md"
             },
             {
               "title": "Configuration System",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/CODE%20Framework%20Configuration%20System.md"
+              "githublink": "CODE%20Framework%20Configuration%20System.md"
             },
             {
               "title": "Notifications",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/WPF%20MVVM_MVC%20Notifications.md"
+              "githublink": "WPF%20MVVM_MVC%20Notifications.md"
             },
             {
               "title": "Resource Dictionary Loading",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/WPF%20Resource%20Dictionary%20Loading.md"
+              "githublink": "WPF%20Resource%20Dictionary%20Loading.md"
             },
             {
               "title": "WPF ImageHelper",
-              "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/WPF%20ImageHelper.md"
+              "githublink": "WPF%20ImageHelper.md"
             }
           ]
         }
@@ -230,19 +230,19 @@
       "topics": [
         {
           "title": "JSON Features",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/JSON%20Features.md"
+          "githublink": "JSON%20Features.md"
         },
         {
           "title": "Logging Framework",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Logging%20Framework.html"
+          "githublink": "Logging%20Framework.html"
         },
         { 
           "title": "ObjectHelper and Complex Paths",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/ObjectHelper%20and%20Complex%20Paths.md"
+          "githublink": "ObjectHelper%20and%20Complex%20Paths.md"
         },
         {
           "title": "TransparentProxyGenerator",
-          "githublink": "https://raw.githubusercontent.com/MarkusEggerInc/CODEFrameworkDocs/master/Using%20the%20Transparent%20Proxy%20Generator.md"
+          "githublink": "Using%20the%20Transparent%20Proxy%20Generator.md"
         }
       ]
     }
