@@ -63,7 +63,7 @@ The following table shows the supported mask characters:
 | . | Decimal placeholder. The actual display character used will be the decimal symbol appropriate to the format provider, as determined by the control's FormatProvider property. |
 | , | Thousands placeholder. The actual display character used will be the thousands placeholder appropriate to the format provider, as determined by the control's FormatProvider property. |
 | : | Time separator. The actual display character used will be the time symbol appropriate to the format provider, as determined by the control's FormatProvider property. |
-| / | Date separator. The actual display character used will be the date symbol appropriate to the format provider, as determined by the control's FormatProvider property. |
+| / | Date separator. The actual display character used wil l be the date symbol appropriate to the format provider, as determined by the control's FormatProvider property. |
 | < | Shift down. Converts all characters that follow to lowercase. |
 | > | Shift up. Converts all characters that follow to uppercase. |
 | &#124; | Disable a previous shift up or shift down. |
