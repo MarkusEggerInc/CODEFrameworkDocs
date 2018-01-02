@@ -47,7 +47,7 @@ So what are all the masks we support? Well, there are the “$” and the “d�
 The following table shows the supported mask characters:
 
 | Masking element | Description |
-| - | - |
+| --- | --- |
 | $ | Currency input (decimal, with configurable or default currency symbol based on current UI culture settings). See below for information about negative values. |
 | d | Decimal input. See below for information about negative values and number of digits allowed. |
 | % | Percentage input. Similar to decimal, but with a trailing % symbol. See below for information about negative values and number of digits allowed. |
