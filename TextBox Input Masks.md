@@ -47,11 +47,11 @@ So what are all the masks we support? Well, there are the “$” and the “d�
 The following table shows the supported mask characters:
 
 | Masking element | Description |
-------------------------------------
+| - | - |
 | $ | Currency input (decimal, with configurable or default currency symbol based on current UI culture settings). See below for information about negative values. |
 | d | Decimal input. See below for information about negative values and number of digits allowed. |
 | % | Percentage input. Similar to decimal, but with a trailing % symbol. See below for information about negative values and number of digits allowed. |
-| 0 Digit, required. This element will accept any single digit between 0 and 9. |
+| 0 | Digit, required. This element will accept any single digit between 0 and 9. |
 | 9 | Digit or space, optional. |
 | # | Digit or space, optional. If this position is blank in the mask, it will be rendered as a space in the Text property. Plus (+) and minus (-) signs are allowed. |
 | L | Letter, required. Restricts input to the ASCII letters a-z and A-Z. This mask element is equivalent to [a-zA-Z] in regular expressions. |
@@ -66,7 +66,7 @@ The following table shows the supported mask characters:
 | / | Date separator. The actual display character used will be the date symbol appropriate to the format provider, as determined by the control's FormatProvider property. |
 | < | Shift down. Converts all characters that follow to lowercase. |
 | > | Shift up. Converts all characters that follow to uppercase. |
-| | | Disable a previous shift up or shift down. |
+| &#124; | Disable a previous shift up or shift down. |
 | \ | Escape. Escapes a mask character, turning it into a literal. "\\" is the escape sequence for a backslash. |
 
 All other characters are literals. All non-mask elements will appear as themselves within MaskedTextBox. Literals always occupy a static position in the mask at run time, and cannot be moved or deleted by the user.
