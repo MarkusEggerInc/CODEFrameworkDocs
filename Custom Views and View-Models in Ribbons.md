@@ -31,7 +31,7 @@ In this case, the “view” is simply an instantiated user control, and the cur
 
 The following example shows a larger Ribbon that uses this technique:
 
-![](Custom%20Views%20and%20View-Models%20in%20Ribbons%201.jpg)
+![](Custom%20Views%20and%20View-Models%20in%20Ribbons/Custom%20Views%20and%20View-Models%20in%20Ribbons%201.jpg)
 
 Note: Only some themes (in particular the Metro and the Workplace theme) support these settings. All others, the custom view and view-model will be ignored and instead, a standard item will be created, and – when clicked – the execute metod will fire. IF the theme respects the custom view and view-model however, the custom view takes over and the default execute method is ignored entirely. (The custom view-model can of course have its own actions and UI elements that fire those, if that is needed).
 
@@ -43,4 +43,4 @@ Also, note that hardcoding a view as in the example above is not the most elegan
 
 On a side-note: The latest Ribbon also supports a number of other features. It looks better with disabled controls. It can more dynamically react to changes of element visibility and changes in captions of elements. It also behaves better with longer labels and breaks them more accurately across multiple lines. Here’s an example:
 
-![](Custom%20Views%20and%20View-Models%20in%20Ribbons%202.jpg)
+![](Custom%20Views%20and%20View-Models%20in%20Ribbons/Custom%20Views%20and%20View-Models%20in%20Ribbons%202.jpg)
