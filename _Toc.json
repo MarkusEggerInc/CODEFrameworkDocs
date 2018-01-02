@@ -90,6 +90,10 @@
               "githublink": "Auto-Complete%20in%20WPF%20UIs.md"
             },
             {
+              "title": "Caps-Lock Warning (and Global Key Handlers)",
+              "githublink": "CanExecute%20on%20ViewActions.md"
+            },
+            {
               "title": "Icons - Theme Icons",
               "githublink": "Theme%20Icons.md"
             },
