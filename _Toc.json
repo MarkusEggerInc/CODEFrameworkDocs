@@ -108,8 +108,11 @@
             {
               "title": "Text Boxes - Select on Entry",
               "githublink": "Select%20WPF%20TextBoxes%20on%20Entry.md"
-            }
-          ]
+            },
+            {
+              "title": "Text Boxes - Input Masks",
+              "githublink": "TextBox Input Masks.md"
+            }          ]
         },
         {
           "title": "Layout and Visuals",
