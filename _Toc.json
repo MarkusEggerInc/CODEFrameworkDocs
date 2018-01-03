@@ -25,7 +25,8 @@
         },
         {
           "title": "Tools Change Log",
-          "githublink": "CODE%20Framework%20Tools%20Change%20Log.md"
+          "githublink": "CODE%20Framework%20Tools%20Change%20Log.md",
+          "seeAlso": "Framework Change Log"
         }
       ]
     },
