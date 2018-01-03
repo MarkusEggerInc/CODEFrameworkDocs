@@ -109,11 +109,15 @@
             },
             {
               "title": "Odd and Even Row Background Colors in Lists",
-              "githublink": "Odd%20and%20Even%20Row%20Background%20Color%20in%20Lists.md"
+              "githublink": "Odd and Even Row Background Color in Lists.md"
+            },
+            {
+              "title": "Progress Animations",
+              "githublink": "Progress Animations.md"
             },
             {
               "title": "Range Slider",
-              "githublink": "RangeSlider%20Control.md"
+              "githublink": "RangeSlider Control.md"
             },
             {
               "title": "Ribbon - Custom Views and View-Models in the Ribbon", 
@@ -280,11 +284,15 @@
             },
             {
               "title": "View-Actions - CanExecute",
-              "githublink": "CanExecute%20on%20ViewActions.md"
+              "githublink": "CanExecute on ViewActions.md"
             },
             {
               "title": "View-Actions - Checked and Toggle",
               "githublink": "Checked and Toggle View-Actions.md"
+            },
+            {
+              "title": "View-Actions - Pinned Actions",
+              "githublink": "Pinned View-Actions.md"
             }
           ]
         }

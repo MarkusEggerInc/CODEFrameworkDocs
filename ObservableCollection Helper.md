@@ -85,7 +85,7 @@ private static EmployeeResult GetDriversFromService()
     return new EmployeeResult
     {
         Success = driverResponse.Success,
-        FailireInformation = driverResponse.FailureInformation,
+        FailureInformation = driverResponse.FailureInformation,
         Employees = droverResponse.Drivers.Select(driver => new EmployeeViewModel
         {
             EmployeeId = driver.EmployeeId,
