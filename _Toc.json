@@ -104,6 +104,10 @@
               "githublink": "Theme%20Icons.md"
             },
             {
+              "title": "ListBox - Multi-Column Lists",
+              "githublink": "Multi-Column Lists.md"
+            },
+            {
               "title": "Odd and Even Row Background Colors in Lists",
               "githublink": "Odd%20and%20Even%20Row%20Background%20Color%20in%20Lists.md"
             },
@@ -161,8 +165,16 @@
               "githublink": "MessageBoxes in WPF MVVM_MVC.md"
             },            
             {
-              "title": "Metro ListBoxes in WPF",
-              "githublink": "Metro%20ListBoxes%20in%20WPF.html"
+              "title": "Metro - ListBoxes",
+              "githublink": "Metro ListBoxes in WPF.md"
+            },            
+            {
+              "title": "Metro - Control Margins",
+              "githublink": "Metro-Style Control Margins.md"
+            },            
+            {
+              "title": "Metro - Start Screen",
+              "githublink": "Metro Start Screen.md"
             },            
             {
               "title": "Styling - MVVM Shell Styling Tips",
