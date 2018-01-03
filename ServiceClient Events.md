@@ -6,7 +6,7 @@ One set of events has to do with "opening a channel" to a service. For instance,
 
 ```c#
 ServiceClient.Call<ICustomerService>(s => {
-    // Service code here...
+    // Service calling code goes here...
 };
 ```
 
