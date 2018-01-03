@@ -275,6 +275,10 @@
               "githublink": "WPF%20Resource%20Dictionary%20Loading.md"
             },
             {
+              "title": "Splitting WPF Apps into Multiple Projects",
+              "githublink": "Splitting WPF Apps into Multiple Projects.md"
+            },
+            {
               "title": "Status Bars",
               "githublink": "WPF MVVM_MVC Status Bar.md"
             },
