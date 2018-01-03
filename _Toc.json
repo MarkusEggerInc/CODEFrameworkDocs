@@ -187,6 +187,10 @@
             {
               "title": "Themes - Simplified Resource Dictionary Download",
               "githublink": "WPF%20Theme%20Resource%20Dictionary%20Download.md"
+            },
+            {
+              "title": "Themes - Standard Icon Resources",
+              "githublink": "AllIcons.md"
             }
           ]
         }, 
