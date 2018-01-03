@@ -231,6 +231,10 @@
               "githublink": "WPF%20Resource%20Dictionary%20Loading.md"
             },
             {
+              "title": "Status Bars",
+              "githublink": "WPF MVVM_MVC Status Bar.md"
+            },
+            {
               "title": "WPF ImageHelper",
               "githublink": "WPF%20ImageHelper.md"
             }
