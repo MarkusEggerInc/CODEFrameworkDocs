@@ -101,7 +101,8 @@
             },
             {
               "title": "Icons - Theme Icons",
-              "githublink": "Theme%20Icons.md"
+              "githublink": "Theme%20Icons.md",
+              "seeAlso": "Standard CODE Framework Icons"
             },
             {
               "title": "ListBox - Multi-Column Lists",
@@ -190,7 +191,8 @@
             },
             {
               "title": "Themes - Standard Icon Resources",
-              "githublink": "AllIcons.md"
+              "githublink": "AllIcons.md",
+              "seeAlso": "ThemeIcon Control|Icons - Theme Icons"
             }
           ]
         }, 
