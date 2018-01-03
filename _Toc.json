@@ -178,6 +178,10 @@
               "githublink": "AsyncWorker%20Part%202.md"
             },
             {
+              "title": "Fast Loading of Standard View-Models with Image Resources",
+              "githublink": "Fast Loading of Standard View-Models with Image Resources.md"
+            },
+            {
               "title": "Standard Views and View-Models",
               "githublink": "Standard%20Views%20and%20View%20Models.md"
             },
@@ -190,6 +194,10 @@
         {
           "title": "Understanding Views",
           "topics": [
+            {
+              "title": "Default Focus in Views",
+              "githublink": "Default Focus in Views.md"
+            },
             {
               "title": "Partial Views",
               "githublink": "Partial%20Views%20in%20CODE%20Framework%20WPF.md"
