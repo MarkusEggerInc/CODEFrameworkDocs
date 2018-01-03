@@ -149,6 +149,10 @@
               "githublink": "Automatic%20Layout%20-%20MultiPanel.md"
             },
             {
+              "title": "Font Sizes and Font Families in WPF Apps",
+              "githublink": "Font Sizes and Styles in WPF Apps.md"
+            },
+            {
               "title": "Layout - Setting Generic/Abstract Dimensions on Controls",
               "githublink": "Setting%20Generic%20and%20Abstract%20Control%20Dimensions%20in%20WPF.md"
             },
@@ -230,6 +234,14 @@
             {
               "title": "Configuration System",
               "githublink": "CODE%20Framework%20Configuration%20System.md"
+            },
+            {
+              "title": "Hooking Events with Commands",
+              "githublink": "Generic ability to hook all events as commands.md"
+            },
+            {
+              "title": "Input Validation",
+              "githublink": "Input Validation in WPF.md"
             },
             {
               "title": "Notifications",
