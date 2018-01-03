@@ -260,6 +260,10 @@
               "githublink": "WPF%20MVVM_MVC%20Notifications.md"
             },
             {
+              "title": "Observable Collection Helper",
+              "githublink": "ObservableCollection Helper.md"
+            },
+            {
               "title": "Resource Dictionary Loading",
               "githublink": "WPF%20Resource%20Dictionary%20Loading.md"
             },
@@ -301,6 +305,10 @@
         {
           "title": "TransparentProxyGenerator",
           "githublink": "Using the Transparent Proxy Generator.md"
+        },
+        {
+          "title": "Type and Null Checking Convenience Method",
+          "githublink": "Type and Null Checking Convenience Method.md"
         }
       ]
     }
