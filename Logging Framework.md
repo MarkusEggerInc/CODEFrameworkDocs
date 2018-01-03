@@ -424,7 +424,6 @@ public class MyLogger : ILogger
     {
         this.Log(event.ToString(), type);
     }
- 
 
     public LogEventType TypeFilter { get; set; }
 } 
