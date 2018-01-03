@@ -102,7 +102,7 @@
             {
               "title": "Icons - Theme Icons",
               "githublink": "Theme%20Icons.md",
-              "seeAlso": "Standard CODE Framework Icons"
+              "seeAlso": "Standard CODE Framework Icons|Themes - Standard Icon Resources"
             },
             {
               "title": "ListBox - Multi-Column Lists",
@@ -187,7 +187,7 @@
             },
             {
               "title": "Themes - Simplified Resource Dictionary Download",
-              "githublink": "WPF%20Theme%20Resource%20Dictionary%20Download.md"
+              "githublink": "WPF Theme Resource Dictionary Download.md"
             },
             {
               "title": "Themes - Standard Icon Resources",
