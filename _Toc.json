@@ -276,19 +276,19 @@
       "topics": [
         {
           "title": "JSON Features",
-          "githublink": "JSON%20Features.md"
+          "githublink": "JSON Features.md"
         },
         {
           "title": "Logging Framework",
-          "githublink": "Logging%20Framework.html"
+          "githublink": "Logging Framework.md"
         },
         { 
           "title": "ObjectHelper and Complex Paths",
-          "githublink": "ObjectHelper%20and%20Complex%20Paths.md"
+          "githublink": "ObjectHelper and Complex Paths.md"
         },
         {
           "title": "TransparentProxyGenerator",
-          "githublink": "Using%20the%20Transparent%20Proxy%20Generator.md"
+          "githublink": "Using the Transparent Proxy Generator.md"
         }
       ]
     }
