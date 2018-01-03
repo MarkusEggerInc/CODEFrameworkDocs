@@ -215,10 +215,6 @@
               "githublink": "Activating%20Existing%20Views.md"
             },
             {
-              "title": "CanExecute on View Actions",
-              "githublink": "CanExecute%20on%20ViewActions.md"
-            },
-            {
               "title": "Configuration System",
               "githublink": "CODE%20Framework%20Configuration%20System.md"
             },
@@ -238,6 +234,14 @@
               "title": "WPF ImageHelper",
               "githublink": "WPF%20ImageHelper.md"
             }
+            {
+              "title": "View-Actions - CanExecute",
+              "githublink": "CanExecute%20on%20ViewActions.md"
+            },
+            {
+              "title": "View-Actions - Checked and Toggle",
+              "githublink": "Checked and Toggle View-Actions.md"
+            },
           ]
         }
       ]
