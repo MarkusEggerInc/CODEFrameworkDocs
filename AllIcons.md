@@ -1,5 +1,87 @@
 # Standard CODE Framework Icons
 
+
+Standard Icon Resources
+All the CODE Framework WPF themes support a list of standard icons in the form of Brush resources that can be used to fill any WPF object (typically, this is used as the fill color for a rectangle of the desired size).
+
+Note that all icons are defined as vector graphics expressed as Brushes, so they can be used as “fill colors” wherever brushes are used. They can also be used by resource name in elements that support brush resources directly. Since icons are based on vector graphics, they can be used at any size without loss of quality.
+
+Here’s an example where an icon is used as a “fill color”:
+
+```
+<Rectangle Height="36" Width="36" Fill="{DynamicResource CODE.Framework.Canvas-Icon-Paste}" />
+```
+
+The following is an example for an object that supports resources directly:
+
+```cs
+new ViewAction("Full Screen",
+               execute: (a, o) => FullScreen(), 
+               brushResourceKey: "CODE.Framework-Icon-ZoomIn");
+```
+
+It is also possible to use these kinds of icons programmatically. For instance, if you want to assign a brush to an object, you can do the following:
+
+```cs
+var rect = new Rectangle();
+rect.Fill = Application.Current.FindResource("CODE.Framework-Icon-ZoomIn") as Brush;
+```
+
+Or, a view model could have a property that retrieves a brush (which one could later use for binding):
+
+```cs
+public Brush SomeLogo
+{
+    get
+    {
+        return Application.Current.FindResource("CODE.Framework-Icon-ZoomIn") as Brush;
+    }
+}
+```
+
+Metro icons are all monochrome and use a single defined color/brush to draw themselves. That color can be changed, simply by redefining those color resources. Here is the default definition for those colors:
+
+```
+<Color x:Key="CODE.Framework-Metro-IconForegroundColor">Black</Color>
+<SolidColorBrush x:Key="CODE.Framework-Metro-IconForegroundBrush" Color="{DynamicResource CODE.Framework-Metro-IconForegroundColor}" />
+```
+
+When using standard view models, the model class provides methods to load brush resources. The simplest way to load a brush resource in a standard view model is through the GetBrushFromResource() method:
+
+```cs
+public class CustomerQuickInformation : StandardViewModel
+{
+     public CustomerQuickInformation()
+     {
+         Image1 = GetBrushFromResource("CODE.Framework-Icon-Home");
+     }
+}
+```
+
+This loads the resource and performs a few additional tasks such as making sure resource uses appropriately themed colors. Note that this can at times be a performance intensive task and should thus be used with care. If you have to load hundreds of brush resources (as is often the case in large lists) and many or all of those items share the same icon, there are more specific methods such as LoadSharedImage1FromBrushResource() that perform the same task but in a highly optimized way that works particularly well for numerous instances of the same view model:
+
+```cs
+public class CustomerQuickInformation : StandardViewModel
+{
+     public CustomerQuickInformation()
+     {
+         LoadSharedImage1FromBrushResource("CODE.Framework-Icon-Home");
+     }
+}
+```
+
+Note there this loads the brush and assigns it internally to Image1. There are equivalent methods for all image and logo properties.
+
+## Side-Note: Other Icons
+
+For a very large selection of additional icon resources (specifically designed for XAML use, but also available as SVG and various bitmap formats such as JPG, PNG,…) check out www.Xamalot.com!
+
+## List of Supported Icons
+
+The following is a list of supported icons:
+
+_Note: Whenever no icon is specified for a specific theme, the Metro icon is used as a default._
+
 <table>
 <thead>
 <tr>
