@@ -10,6 +10,10 @@ ServiceClient.Call<ICustomerService>(s => {
 };
 ```
 
+This is *some* additional **test** text.
+
+![](Dummy.png)
+
 This opens up a channel to an instance of a customer service (which implements/supports the ICustomerService interface. When this happens, the ServiceClient class fires the following events:
 
 * BeforeChannelOpens - Fires before the channel is opened. All parameters and configuration options (typically WCF objects) are passed along with the event as parameters and can be manipulated to further configure the channel.
