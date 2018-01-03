@@ -1,10 +1,10 @@
-﻿# CODE Framework WCF HTTPS Service Hosting
+﻿# WCF HTTPS Service Hosting
 
 Using CODE Framework, you can easily host and call services using the HTTPS protocol. All methods on the service host objects (server-side) as well as the ServiceClient class (client-side) related to services that use the HTTP protocol now feature an optional "useHttps" parameter. 
 
 The following is an example of how that parameter is used to host services:
 
-```c#
+```cs
 host.AddServiceHostBasicHttp(typeof(TestService)); // HTTP 
 host.AddServiceHostBasicHttp(typeof(TestService), useHttps: true); // HTTPS 
 host.AddServiceHostWsHttp(typeof(TestService)); // HTTP 

@@ -39,23 +39,31 @@
         },
         {
           "title": "WCF HTTPS Service Hosting",
-          "githublink": "CODE%20Framework%20WCF%20HTTPS%20Service%20Hosting.md"
+          "githublink": "WCF HTTPS Service Hosting.md"
         },
         {
           "title": "WCF Self-Hosted Service Concurrency",
-          "githublink": "WCF%20Self-Hosted%20Service%20Concurrency.md"
+          "githublink": "WCF Self-Hosted Service Concurrency.md"
+        },
+        {
+          "title": "WCF Service Namespaces",
+          "githublink": "WCF Service Namespaces.md"
         },
         {
           "title": "CORS Support in ServiceHostController",
-          "githublink": "CORS%20Support%20in%20ServiceHostController.md"
+          "githublink": "CORS Support in ServiceHostController.md"
         },
         {
           "title": "Creating REST Services",
-          "githublink": "Creating%20REST%20Services.md"
+          "githublink": "Creating REST Services.md"
+        },
+        {
+          "title": "Using the Service Test Host/Harness",
+          "githublink": "Using the Service Test Harness.md"
         },
         {
           "title": "WebApi Service Hosting",
-          "githublink": "WebApi%20Service%20Hosting.md"
+          "githublink": "WebApi Service Hosting.md"
         }
       ]
     },
@@ -129,6 +137,10 @@
               "githublink": "Ribbon - Setting a Default Page.md"
             },
             {
+              "title": "Sticky Notes",
+              "githublink": "Sticky Notes Features.md"
+            },
+            {
               "title": "Text Boxes - Select on Entry",
               "githublink": "Select WPF TextBoxes on Entry.md"
             },
@@ -182,8 +194,16 @@
               "githublink": "Metro Start Screen.md"
             },            
             {
+              "title": "Metro - Transparent ListBoxes",
+              "githublink": "Transparent ListBoxes in WPF Metro-style Apps.md"
+            },
+            {
               "title": "Styling - MVVM Shell Styling Tips",
               "githublink": "WPF MVVM Shell Styling Tips.md"
+            },
+            {
+              "title": "Styling - Tuning the Shell",
+              "githublink": "Tuning the Appearance of the Shell.md"
             },
             {
               "title": "Themes - Simplified Resource Dictionary Download",
@@ -232,15 +252,19 @@
             },
             {
               "title": "Partial Views",
-              "githublink": "Partial%20Views%20in%20CODE%20Framework%20WPF.md"
+              "githublink": "Partial Views in CODE Framework WPF.md"
             },
             {
               "title": "Reacting when Views Close",
-              "githublink": "Reacting%20when%20Views%20Close.md"
+              "githublink": "Reacting when Views Close.md"
             },
             {
               "title": "Standard Views and View-Models",
-              "githublink": "Standard%20Views%20and%20View%20Models.md"
+              "githublink": "Standard Views and View Models.md"
+            },
+            {
+              "title": "Using the View Visualizer",
+              "githublink": "Using the View-Visualizer.md"
             }
           ]
         },
@@ -303,6 +327,14 @@
             {
               "title": "View-Actions - Pinned Actions",
               "githublink": "Pinned View Actions.md"
+            },
+            {
+              "title": "View-Actions - String Indexers",
+              "githublink": "String Indexer for ViewActionsCollection.md"
+            },
+            {
+              "title": "Window Resize and Drag for Borderless Windows",
+              "githublink": "Window Resize and Drag for Borderless Windows.md"
             }
           ]
         }
