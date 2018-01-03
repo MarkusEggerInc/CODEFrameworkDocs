@@ -122,7 +122,8 @@
             {
               "title": "Text Boxes - Input Masks",
               "githublink": "TextBox Input Masks.md"
-            }          ]
+            }          
+          ]
         },
         {
           "title": "Layout and Visuals",
@@ -233,7 +234,7 @@
             {
               "title": "WPF ImageHelper",
               "githublink": "WPF%20ImageHelper.md"
-            }
+            },
             {
               "title": "View-Actions - CanExecute",
               "githublink": "CanExecute%20on%20ViewActions.md"
@@ -241,7 +242,7 @@
             {
               "title": "View-Actions - Checked and Toggle",
               "githublink": "Checked and Toggle View-Actions.md"
-            },
+            }
           ]
         }
       ]
