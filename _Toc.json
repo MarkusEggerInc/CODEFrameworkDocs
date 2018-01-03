@@ -20,7 +20,8 @@
       "topics": [
         {
           "title": "Framework Change Log",
-          "githublink": "CODE%20Framework%20(.NET)%20Change%20Log.md"
+          "githublink": "CODE%20Framework%20(.NET)%20Change%20Log.md",
+          "seeAlso": "Tools Change Log"
         },
         {
           "title": "Tools Change Log",
