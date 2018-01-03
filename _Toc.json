@@ -34,6 +34,10 @@
       "title": "Services: Server-Side Hosting",
       "topics": [
         {
+          "title": "Fixing Service Host Security Errors",
+          "githublink": "Fixing Service Host Security Errors.md"
+        },
+        {
           "title": "WCF HTTPS Service Hosting",
           "githublink": "CODE%20Framework%20WCF%20HTTPS%20Service%20Hosting.md"
         },
@@ -179,7 +183,7 @@
             },
             {
               "title": "Fast Loading of Standard View-Models with Image Resources",
-              "githublink": "Fast Loading of Standard View-Models with Image Resources.md"
+              "githublink": "Fast Loading of Standard ViewModels with Image Resources.md"
             },
             {
               "title": "Standard Views and View-Models",
