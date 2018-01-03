@@ -101,7 +101,7 @@
             },
             {
               "title": "Icons - Theme Icons",
-              "githublink": "Theme%20Icons.md",
+              "githublink": "Theme Icons.md",
               "seeAlso": "Standard CODE Framework Icons|Themes - Standard Icon Resources"
             },
             {
@@ -126,11 +126,11 @@
             }, 
             {
               "title": "Ribbon - Setting a Default Page",
-              "githublink": "Ribbon%20-%20Setting%20a%20Default%20Page.md"
+              "githublink": "Ribbon - Setting a Default Page.md"
             },
             {
               "title": "Text Boxes - Select on Entry",
-              "githublink": "Select%20WPF%20TextBoxes%20on%20Entry.md"
+              "githublink": "Select WPF TextBoxes on Entry.md"
             },
             {
               "title": "Text Boxes - Input Masks",
@@ -143,19 +143,19 @@
           "topics": [
             {
               "title": "Automatic Layout - Bidirectional Stack Panel",
-              "githublink": "Bidirectional%20Stack%20Panel.md"
+              "githublink": "Bidirectional Stack Panel.md"
             },
             {
               "title": "Automatic Layout - Edit Form",
-              "githublink": "Automatic%20Layout%20and%20Elasticity.md"
+              "githublink": "Automatic Layout and Elasticity.md"
             },
             {
               "title": "Automatic Layout - Flow Layout",
-              "githublink": "Automatic%20Layout%20-%20Flow%20Layout.md"
+              "githublink": "Automatic Layout - Flow Layout.md"
             },
             {
               "title": "Automatic Layout - Multi-Panel Layout",
-              "githublink": "Automatic%20Layout%20-%20MultiPanel.md"
+              "githublink": "Automatic Layout - MultiPanel.md"
             },
             {
               "title": "Font Sizes and Font Families in WPF Apps",
@@ -163,7 +163,7 @@
             },
             {
               "title": "Layout - Setting Generic/Abstract Dimensions on Controls",
-              "githublink": "Setting%20Generic%20and%20Abstract%20Control%20Dimensions%20in%20WPF.md"
+              "githublink": "Setting Generic and Abstract Control Dimensions in WPF.md"
             },
             {
               "title": "MessageBoxes in WPF MVVM/MVC",
@@ -183,7 +183,7 @@
             },            
             {
               "title": "Styling - MVVM Shell Styling Tips",
-              "githublink": "WPF%20MVVM%20Shell%20Styling%20Tips.md"
+              "githublink": "WPF MVVM Shell Styling Tips.md"
             },
             {
               "title": "Themes - Simplified Resource Dictionary Download",
@@ -192,7 +192,7 @@
             {
               "title": "Themes - Standard Icon Resources",
               "githublink": "AllIcons.md",
-              "seeAlso": "ThemeIcon Control|Icons - Theme Icons"
+              "seeAlso": "Theme Icon Control|Icons - Theme Icons"
             }
           ]
         }, 
