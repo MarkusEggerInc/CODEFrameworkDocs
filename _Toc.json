@@ -6,26 +6,26 @@
   "topics": [
     {
       "title": "Getting Started",
-      "githublink": "",
+      "slug": "",
       "topics": [
         {
           "title": "Installing the Framework",
-          "githublink": ""
+          "slug": ""
         }
       ]
     },
     {
       "title": "What's New?",
-      "githublink": "",
+      "slug": "",
       "topics": [
         {
           "title": "Framework Change Log",
-          "githublink": "CODE%20Framework%20(.NET)%20Change%20Log.md",
+          "slug": "CODE%20Framework%20(.NET)%20Change%20Log.md",
           "seeAlso": "Tools Change Log"
         },
         {
           "title": "Tools Change Log",
-          "githublink": "CODE%20Framework%20Tools%20Change%20Log.md",
+          "slug": "CODE%20Framework%20Tools%20Change%20Log.md",
           "seeAlso": "Framework Change Log"
         }
       ]
@@ -35,35 +35,35 @@
       "topics": [
         {
           "title": "Fixing Service Hosting Security Errors",
-          "githublink": "Fixing Service Hosting Security Errors.md"
+          "slug": "Fixing Service Hosting Security Errors.md"
         },
         {
           "title": "WCF HTTPS Service Hosting",
-          "githublink": "WCF HTTPS Service Hosting.md"
+          "slug": "WCF HTTPS Service Hosting.md"
         },
         {
           "title": "WCF Self-Hosted Service Concurrency",
-          "githublink": "WCF Self-Hosted Service Concurrency.md"
+          "slug": "WCF Self-Hosted Service Concurrency.md"
         },
         {
           "title": "WCF Service Namespaces",
-          "githublink": "WCF Service Namespaces.md"
+          "slug": "WCF Service Namespaces.md"
         },
         {
           "title": "CORS Support in ServiceHostController",
-          "githublink": "CORS Support in ServiceHostController.md"
+          "slug": "CORS Support in ServiceHostController.md"
         },
         {
           "title": "Creating REST Services",
-          "githublink": "Creating REST Services.md"
+          "slug": "Creating REST Services.md"
         },
         {
           "title": "Using the Service Test Host/Harness",
-          "githublink": "Using the Service Test Harness.md"
+          "slug": "Using the Service Test Harness.md"
         },
         {
           "title": "WebApi Service Hosting",
-          "githublink": "WebApi Service Hosting.md"
+          "slug": "WebApi Service Hosting.md"
         }
       ]
     },
@@ -72,11 +72,11 @@
       "topics": [
         {
           "title": "Calling REST Services through ServiceClient",
-          "githublink": "Calling%20REST%20Services%20through%20ServiceClient.md"
+          "slug": "Calling%20REST%20Services%20through%20ServiceClient.md"
         },
         {
           "title": "ServiceClient Events",
-          "githublink": "ServiceClient%20Events.md"
+          "slug": "ServiceClient%20Events.md"
         }
       ]
     },
@@ -88,11 +88,11 @@
           "topics": [
             {
               "title": "Bind, Security, and Input Validation",
-              "githublink": "Bind%2C%20Security%2C%20and%20Input%20Validation.md"
+              "slug": "Bind%2C%20Security%2C%20and%20Input%20Validation.md"
             },
             {
               "title": "Binding to Enums",
-              "githublink": "Binding%20to%20Enums.md"
+              "slug": "Binding%20to%20Enums.md"
             }
           ]
         },
@@ -101,52 +101,52 @@
           "topics": [
             {
               "title": "Auto-Complete UIs",
-              "githublink": "Auto-Complete%20in%20WPF%20UIs.md"
+              "slug": "Auto-Complete%20in%20WPF%20UIs.md"
             },
             {
               "title": "Caps-Lock Warning (and Global Key Handlers)",
-              "githublink": "Caps-Lock Warning and Global Key Handlers.md"
+              "slug": "Caps-Lock Warning and Global Key Handlers.md"
             },
             {
               "title": "Icons - Theme Icons",
-              "githublink": "Theme Icons.md",
+              "slug": "Theme Icons.md",
               "seeAlso": "Standard CODE Framework Icons|Themes - Standard Icon Resources"
             },
             {
               "title": "ListBox - Multi-Column Lists",
-              "githublink": "Multi-Column Lists.md"
+              "slug": "Multi-Column Lists.md"
             },
             {
               "title": "Odd and Even Row Background Colors in Lists",
-              "githublink": "Odd and Even Row Background Color in Lists.md"
+              "slug": "Odd and Even Row Background Color in Lists.md"
             },
             {
               "title": "Progress Animations",
-              "githublink": "Progress Animations.md"
+              "slug": "Progress Animations.md"
             },
             {
               "title": "Range Slider",
-              "githublink": "RangeSlider Control.md"
+              "slug": "RangeSlider Control.md"
             },
             {
               "title": "Ribbon - Custom Views and View-Models in the Ribbon", 
-              "githublink": "Custom Views and View-Models in Ribbons.md"
+              "slug": "Custom Views and View-Models in Ribbons.md"
             }, 
             {
               "title": "Ribbon - Setting a Default Page",
-              "githublink": "Ribbon - Setting a Default Page.md"
+              "slug": "Ribbon - Setting a Default Page.md"
             },
             {
               "title": "Sticky Notes",
-              "githublink": "Sticky Notes Features.md"
+              "slug": "Sticky Notes Features.md"
             },
             {
               "title": "Text Boxes - Select on Entry",
-              "githublink": "Select WPF TextBoxes on Entry.md"
+              "slug": "Select WPF TextBoxes on Entry.md"
             },
             {
               "title": "Text Boxes - Input Masks",
-              "githublink": "TextBox Input Masks.md"
+              "slug": "TextBox Input Masks.md"
             }          
           ]
         },
@@ -155,63 +155,63 @@
           "topics": [
             {
               "title": "Automatic Layout - Bidirectional Stack Panel",
-              "githublink": "Bidirectional Stack Panel.md"
+              "slug": "Bidirectional Stack Panel.md"
             },
             {
               "title": "Automatic Layout - Edit Form",
-              "githublink": "Automatic Layout and Elasticity.md"
+              "slug": "Automatic Layout and Elasticity.md"
             },
             {
               "title": "Automatic Layout - Flow Layout",
-              "githublink": "Automatic Layout - Flow Layout.md"
+              "slug": "Automatic Layout - Flow Layout.md"
             },
             {
               "title": "Automatic Layout - Multi-Panel Layout",
-              "githublink": "Automatic Layout - MultiPanel.md"
+              "slug": "Automatic Layout - MultiPanel.md"
             },
             {
               "title": "Font Sizes and Font Families in WPF Apps",
-              "githublink": "Font Sizes and Styles in WPF Apps.md"
+              "slug": "Font Sizes and Styles in WPF Apps.md"
             },
             {
               "title": "Layout - Setting Generic/Abstract Dimensions on Controls",
-              "githublink": "Setting Generic and Abstract Control Dimensions in WPF.md"
+              "slug": "Setting Generic and Abstract Control Dimensions in WPF.md"
             },
             {
               "title": "MessageBoxes in WPF MVVM/MVC",
-              "githublink": "MessageBoxes in WPF MVVM_MVC.md"
+              "slug": "MessageBoxes in WPF MVVM_MVC.md"
             },            
             {
               "title": "Metro - ListBoxes",
-              "githublink": "Metro ListBoxes in WPF.md"
+              "slug": "Metro ListBoxes in WPF.md"
             },            
             {
               "title": "Metro - Control Margins",
-              "githublink": "Metro-Style Control Margins.md"
+              "slug": "Metro-Style Control Margins.md"
             },            
             {
               "title": "Metro - Start Screen",
-              "githublink": "Metro Start Screen.md"
+              "slug": "Metro Start Screen.md"
             },            
             {
               "title": "Metro - Transparent ListBoxes",
-              "githublink": "Transparent ListBoxes in WPF Metro-style Apps.md"
+              "slug": "Transparent ListBoxes in WPF Metro-style Apps.md"
             },
             {
               "title": "Styling - MVVM Shell Styling Tips",
-              "githublink": "WPF MVVM Shell Styling Tips.md"
+              "slug": "WPF MVVM Shell Styling Tips.md"
             },
             {
               "title": "Styling - Tuning the Shell",
-              "githublink": "Tuning the Appearance of the Shell.md"
+              "slug": "Tuning the Appearance of the Shell.md"
             },
             {
               "title": "Themes - Simplified Resource Dictionary Download",
-              "githublink": "WPF Theme Resource Dictionary Download.md"
+              "slug": "WPF Theme Resource Dictionary Download.md"
             },
             {
               "title": "Themes - Standard Icon Resources",
-              "githublink": "AllIcons.md",
+              "slug": "AllIcons.md",
               "seeAlso": "Theme Icon Control|Icons - Theme Icons"
             }
           ]
@@ -221,25 +221,25 @@
           "topics": [
             {
               "title": "Async Worker",
-              "githublink": "CODE%20Framework%20AsyncWorker.md",
+              "slug": "CODE%20Framework%20AsyncWorker.md",
               "seeAlso": "Async Worker - Part 2"
             },
             {
               "title": "Async Worker - Part 2",
-              "githublink": "AsyncWorker%20Part%202.md",
+              "slug": "AsyncWorker%20Part%202.md",
               "seeAlso": "Async Worker"
             },
             {
               "title": "Fast Loading of Standard View-Models with Image Resources",
-              "githublink": "Fast loading of Standard ViewModels with image resources.md"
+              "slug": "Fast loading of Standard ViewModels with image resources.md"
             },
             {
               "title": "Standard Views and View-Models",
-              "githublink": "Standard%20Views%20and%20View%20Models.md"
+              "slug": "Standard%20Views%20and%20View%20Models.md"
             },
             {
               "title": "Standard View-Models Tips",
-              "githublink": "StandardViewModel%20Tips.md"
+              "slug": "StandardViewModel%20Tips.md"
             }
           ]
         },
@@ -248,23 +248,23 @@
           "topics": [
             {
               "title": "Default Focus in Views",
-              "githublink": "Default Focus in Views.md"
+              "slug": "Default Focus in Views.md"
             },
             {
               "title": "Partial Views",
-              "githublink": "Partial Views in CODE Framework WPF.md"
+              "slug": "Partial Views in CODE Framework WPF.md"
             },
             {
               "title": "Reacting when Views Close",
-              "githublink": "Reacting when Views Close.md"
+              "slug": "Reacting when Views Close.md"
             },
             {
               "title": "Standard Views and View-Models",
-              "githublink": "Standard Views and View Models.md"
+              "slug": "Standard Views and View Models.md"
             },
             {
               "title": "Using the View Visualizer",
-              "githublink": "Using the View-Visualizer.md"
+              "slug": "Using the View-Visualizer.md"
             }
           ]
         },
@@ -273,68 +273,68 @@
           "topics": [
             {
               "title": "Accessing the Shell Object",
-              "githublink": "Accessing%20the%20Shell%20object.md"
+              "slug": "Accessing%20the%20Shell%20object.md"
             },
             {
               "title": "Activating Existing/Loaded Views",
-              "githublink": "Activating%20Existing%20Views.md"
+              "slug": "Activating%20Existing%20Views.md"
             },
             {
               "title": "Configuration System",
-              "githublink": "CODE%20Framework%20Configuration%20System.md"
+              "slug": "CODE%20Framework%20Configuration%20System.md"
             },
             {
               "title": "Hooking Events with Commands",
-              "githublink": "Generic ability to hook all events as commands.md"
+              "slug": "Generic ability to hook all events as commands.md"
             },
             {
               "title": "Input Validation",
-              "githublink": "Input Validation in WPF.md"
+              "slug": "Input Validation in WPF.md"
             },
             {
               "title": "Notifications",
-              "githublink": "WPF%20MVVM_MVC%20Notifications.md"
+              "slug": "WPF%20MVVM_MVC%20Notifications.md"
             },
             {
               "title": "Observable Collection Helper",
-              "githublink": "ObservableCollection Helper.md",
+              "slug": "ObservableCollection Helper.md",
               "seeAlso": "Async Worker,Async Worker - Part 2"
             },
             {
               "title": "Resource Dictionary Loading",
-              "githublink": "WPF%20Resource%20Dictionary%20Loading.md"
+              "slug": "WPF%20Resource%20Dictionary%20Loading.md"
             },
             {
               "title": "Splitting WPF Apps into Multiple Projects",
-              "githublink": "Splitting WPF Apps into Multiple Projects.md"
+              "slug": "Splitting WPF Apps into Multiple Projects.md"
             },
             {
               "title": "Status Bars",
-              "githublink": "WPF MVVM_MVC Status Bar.md"
+              "slug": "WPF MVVM_MVC Status Bar.md"
             },
             {
               "title": "WPF ImageHelper",
-              "githublink": "WPF%20ImageHelper.md"
+              "slug": "WPF%20ImageHelper.md"
             },
             {
               "title": "View-Actions - CanExecute",
-              "githublink": "CanExecute on ViewActions.md"
+              "slug": "CanExecute on ViewActions.md"
             },
             {
               "title": "View-Actions - Checked and Toggle",
-              "githublink": "Checked and Toggle View-Actions.md"
+              "slug": "Checked and Toggle View-Actions.md"
             },
             {
               "title": "View-Actions - Pinned Actions",
-              "githublink": "Pinned View Actions.md"
+              "slug": "Pinned View Actions.md"
             },
             {
               "title": "View-Actions - String Indexers",
-              "githublink": "String Indexer for ViewActionsCollection.md"
+              "slug": "String Indexer for ViewActionsCollection.md"
             },
             {
               "title": "Window Resize and Drag for Borderless Windows",
-              "githublink": "Window Resize and Drag for Borderless Windows.md"
+              "slug": "Window Resize and Drag for Borderless Windows.md"
             }
           ]
         }
@@ -345,23 +345,23 @@
       "topics": [
         {
           "title": "JSON Features",
-          "githublink": "JSON Features.md"
+          "slug": "JSON Features.md"
         },
         {
           "title": "Logging Framework",
-          "githublink": "Logging Framework.md"
+          "slug": "Logging Framework.md"
         },
         { 
           "title": "ObjectHelper and Complex Paths",
-          "githublink": "ObjectHelper and Complex Paths.md"
+          "slug": "ObjectHelper and Complex Paths.md"
         },
         {
           "title": "TransparentProxyGenerator",
-          "githublink": "Using the Transparent Proxy Generator.md"
+          "slug": "Using the Transparent Proxy Generator.md"
         },
         {
           "title": "Type and Null Checking Convenience Method",
-          "githublink": "Type and Null Checking Convenience Method.md"
+          "slug": "Type and Null Checking Convenience Method.md"
         }
       ]
     }
