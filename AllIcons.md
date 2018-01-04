@@ -1,7 +1,7 @@
 # Standard CODE Framework Icons
 
+## Standard Icon Resources
 
-Standard Icon Resources
 All the CODE Framework WPF themes support a list of standard icons in the form of Brush resources that can be used to fill any WPF object (typically, this is used as the fill color for a rectangle of the desired size).
 
 Note that all icons are defined as vector graphics expressed as Brushes, so they can be used as “fill colors” wherever brushes are used. They can also be used by resource name in elements that support brush resources directly. Since icons are based on vector graphics, they can be used at any size without loss of quality.
