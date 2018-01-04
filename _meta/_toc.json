@@ -154,6 +154,10 @@
           "title": "Layout and Visuals",
           "topics": [
             {
+              "title": "Understanding Layout",
+              "link": "Understanding Layout.md"
+            },
+            {
               "title": "Automatic Layout - Bidirectional Stack Panel",
               "link": "Bidirectional Stack Panel.md"
             },
