@@ -6,13 +6,7 @@
   "topics": [
     {
       "title": "Getting Started",
-      "link": "",
-      "topics": [
-        {
-          "title": "Installing the Framework",
-          "link": ""
-        }
-      ]
+      "link": "Getting-Started.md"
     },
     {
       "title": "What's New?",
@@ -20,67 +14,72 @@
       "topics": [
         {
           "title": "Framework Change Log",
-          "link": "CODE%20Framework%20(.NET)%20Change%20Log.md",
+          "link": "CODE Framework (.NET) Change Log.md",
           "seeAlso": "Tools Change Log"
         },
         {
           "title": "Tools Change Log",
-          "link": "CODE%20Framework%20Tools%20Change%20Log.md",
+          "link": "CODE Framework Tools Change Log.md",
           "seeAlso": "Framework Change Log"
         }
       ]
     },
     {
-      "title": "Services: Server-Side Hosting",
+      "title": "Services",
       "topics": [
         {
           "title": "Understanding Services in CODE Framework",
           "link": "Understanding Services.md"
         },
         {
-          "title": "Creating REST Services",
-          "link": "Creating REST Services.md"
+          "title": "Services: Server-Side Hosting",
+          "topics": [
+            {
+              "title": "Creating REST Services",
+              "link": "Creating REST Services.md"
+            },
+            {
+              "title": "WebApi Service Hosting",
+              "link": "WebApi Service Hosting.md"
+            },
+            {
+              "title": "Using the Service Test Host/Harness",
+              "link": "Using the Service Test Harness.md"
+            },
+            {
+              "title": "Fixing Service Hosting Security Errors",
+              "link": "Fixing Service Hosting Security Errors.md"
+            },
+            {
+              "title": "WCF HTTPS Service Hosting",
+              "link": "WCF HTTPS Service Hosting.md"
+            },
+            {
+              "title": "WCF Self-Hosted Service Concurrency",
+              "link": "WCF Self-Hosted Service Concurrency.md"
+            },
+            {
+              "title": "WCF Service Namespaces",
+              "link": "WCF Service Namespaces.md"
+            },
+            {
+              "title": "CORS Support in ServiceHostController",
+              "link": "CORS Support in ServiceHostController.md"
+            }
+          ]
         },
         {
-          "title": "WebApi Service Hosting",
-          "link": "WebApi Service Hosting.md"
-        },
-        {
-          "title": "Using the Service Test Host/Harness",
-          "link": "Using the Service Test Harness.md"
-        },
-        {
-          "title": "Fixing Service Hosting Security Errors",
-          "link": "Fixing Service Hosting Security Errors.md"
-        },
-        {
-          "title": "WCF HTTPS Service Hosting",
-          "link": "WCF HTTPS Service Hosting.md"
-        },
-        {
-          "title": "WCF Self-Hosted Service Concurrency",
-          "link": "WCF Self-Hosted Service Concurrency.md"
-        },
-        {
-          "title": "WCF Service Namespaces",
-          "link": "WCF Service Namespaces.md"
-        },
-        {
-          "title": "CORS Support in ServiceHostController",
-          "link": "CORS Support in ServiceHostController.md"
-        }
-      ]
-    },
-    {
-      "title": "Services: Client-Side Calling",
-      "topics": [
-        {
-          "title": "Calling REST Services through ServiceClient",
-          "link": "Calling%20REST%20Services%20through%20ServiceClient.md"
-        },
-        {
-          "title": "ServiceClient Events",
-          "link": "ServiceClient%20Events.md"
+          "title": "Services: Client-Side Calling",
+          "topics": [
+            {
+              "title": "Calling REST Services through ServiceClient",
+              "link": "Calling%20REST%20Services%20through%20ServiceClient.md"
+            },
+            {
+              "title": "ServiceClient Events",
+              "link": "ServiceClient%20Events.md"
+            }
+          ]
         }
       ]
     },
