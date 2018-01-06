@@ -44,6 +44,8 @@ The result probably won’t be the most exciting UI you have ever seen, but it i
 
 ![](Understanding%20Layout/Figure01.png)
 
+Figure 1: The window on the left uses a standard WPF StackPanel, while the one on the right uses a CODE Framework BidirectionalStackPanel. A subtle but consequential difference.
+
 The window on the left uses a standard WPF StackPanel, while the one on the right uses a CODE Framework BidirectionalStackPanel. A subtle but consequential difference.
 
 What is the main benefit of using CODE Framework layout containers? Well, the main benefit is that they provide layout features that you simply would not have otherwise in WPF. The secondary benefit is that these layout containers are theme-aware. This means that they have default styles in different themes to make them look just right in those scenarios.
@@ -230,10 +232,10 @@ The BidirectionalStackPanel layout element is one of the simpler layout elements
 
 This layout approach can be referenced in the following ways:
 
-* Element name: BidirectionalStackPanel
+* Element name: **BidirectionalStackPanel**
 * XAML namespace declaration: clr-namespace:CODE.Framework.Wpf.Layout;assembly=CODE.Framework.Wpf
-* Style key: CODE.Framework-Layout-SimpleFormLayout and CODE.Framework-Layout-SimpleFormToFillLayout
-* Standard layout: SimpleForm and SimpleFormToFill
+* Style key: **CODE.Framework-Layout-SimpleFormLayout** and **CODE.Framework-Layout-SimpleFormToFillLayout**
+* Standard layout: **SimpleForm** and **SimpleFormToFill**
 
 Note: As for all layout elements, the style resource (and the standard layout reference} typically uses this layout element, but there may be differences in some themes.
 
@@ -339,8 +341,8 @@ Note that the chosen standard layout is the “…ToFill” variation, which sim
 
 * Element name: n/a
 * XAML namespace declaration: n/a
-* Style key: CODE.Framework-Layout-StandardFormLayout
-* Standard layout: StandardForm
+* Style key: **CODE.Framework-Layout-StandardFormLayout**
+* Standard layout: **StandardForm**
 
 An example of the use of this style looks like this:
 
@@ -366,10 +368,10 @@ Note that the advantage of the prior approach is that it is based on a style tha
 
 ### Multi Panel Layouts
 
-* Element name: MultiPanel
+* Element name: **MultiPanel**
 * XAML namespace declaration: clr-namespace:CODE.Framework.Wpf.Layout;assembly=CODE.Framework.Wpf
-* Style key: CODE.Framework-Layout-MultiPanelLayout, CODE.Framework-Layout-MultiPanelWithHeaderLayout
-* Standard layout: MultiPanel, MultiPanelWithHeaders
+* Style key: **CODE.Framework-Layout-MultiPanelLayout**, **CODE.Framework-Layout-MultiPanelWithHeaderLayout**
+* Standard layout: **MultiPanel**, **MultiPanelWithHeaders**
 
 Multi panel layouts arrange child elements as proportional panels inside of the main layout element. This is useful in scenarios where you want the available space within an element (often the entire view) to be split (horizontal or vertical) between however many child elements are visible. Optionally, each individual sub-element can be shown with a customizable (and stylable) header. This is definitely easier to show than explain, so take a look at Figure 9 for an example.
 
