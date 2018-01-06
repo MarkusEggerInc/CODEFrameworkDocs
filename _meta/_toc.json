@@ -34,6 +34,22 @@
       "title": "Services: Server-Side Hosting",
       "topics": [
         {
+          "title": "Understanding Services in CODE Framework",
+          "link": "Understanding Services.md"
+        },
+        {
+          "title": "Creating REST Services",
+          "link": "Creating REST Services.md"
+        },
+        {
+          "title": "WebApi Service Hosting",
+          "link": "WebApi Service Hosting.md"
+        },
+        {
+          "title": "Using the Service Test Host/Harness",
+          "link": "Using the Service Test Harness.md"
+        },
+        {
           "title": "Fixing Service Hosting Security Errors",
           "link": "Fixing Service Hosting Security Errors.md"
         },
@@ -52,18 +68,6 @@
         {
           "title": "CORS Support in ServiceHostController",
           "link": "CORS Support in ServiceHostController.md"
-        },
-        {
-          "title": "Creating REST Services",
-          "link": "Creating REST Services.md"
-        },
-        {
-          "title": "Using the Service Test Host/Harness",
-          "link": "Using the Service Test Harness.md"
-        },
-        {
-          "title": "WebApi Service Hosting",
-          "link": "WebApi Service Hosting.md"
         }
       ]
     },
