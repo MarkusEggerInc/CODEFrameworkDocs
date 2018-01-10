@@ -5,11 +5,11 @@
   "version": "1.0",
   "menu": [
     {
-      "title": "Docs Home",
+      "title": "CODE Framework Docs Home",
       "link": "/"
     },
     {
-      "title": "Framework Home",
+      "title": "CODE Framework",
       "link": "http://codeframework.io"
     },
     {
