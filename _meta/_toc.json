@@ -3,6 +3,7 @@
   "owner": "Markus Egger Inc.",
   "language": "en-US",
   "version": "1.0",
+  "requireHttps": true,
   "menu": [
     {
       "title": "CODE Framework Docs Home",
