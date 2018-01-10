@@ -6,11 +6,11 @@
   "requireHttps": true,
   "menu": [
     {
-      "title": "CODE Framework Docs Home",
+      "title": "Docs Home",
       "link": "/"
     },
     {
-      "title": "CODE Framework",
+      "title": "Framework Home",
       "link": "http://codeframework.io"
     },
     {
