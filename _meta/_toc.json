@@ -4,6 +4,11 @@
   "language": "en-US",
   "version": "1.0",
   "requireHttps": true,
+  "theme": {
+    "standardTheme": "Dark",
+    "customeCss": null,
+    "customTemplate": null
+  },
   "menu": [
     {
       "title": "Docs Home",
