@@ -5,7 +5,7 @@
   "version": "1.0",
   "requireHttps": true,
   "theme": {
-    "standardTheme": "Dark",
+    "standardTheme": "Default",
     "customeCss": null,
     "customTemplate": null 
   },
