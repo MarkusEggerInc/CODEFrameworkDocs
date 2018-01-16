@@ -208,7 +208,7 @@ Consider the example shown in Figure 3 for instance. This entire interface conta
 
 In addition to using the custom layout elements provided by CODE Framework, you can also create your own. You may be surprised to find that it isn’t as hard as you might think. If you ever wrote any code that handles manual screen resizing, you already know what’s involved. A detailed discussion of this subject is beyond the scope of this article, but we have another article that covers this very subject: http://www.codemag.com/Article/1011071 
 
-Hard-Coding UIs
+### Hard-Coding UIs
 
 Does all of this mean that you will never use a Grid element again in your WPF apps and manually drop elements into it and define their positions by hand? No, it doesn’t. The Grid element has a bright future in WPF in general and in CODE Framework specifically as well. Not all user interfaces can benefit from templated layout. Sometimes you will just have to sit down and do it by hand and that’s fine. Sometimes you can use templated layouts for most of a form, but one small section may have to be laid out by hand. That’s fine too. 
 
