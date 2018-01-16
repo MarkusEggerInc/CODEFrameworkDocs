@@ -1,6 +1,6 @@
 ﻿# Understanding Layout
 
-> Note: This document is a work in progress_
+> Note: This document is a work in progress
 
 CODE Framework’s (optional) layout features drastically improve developer productivity and increase maintainability and reuse in your application. These features build on top of WPF’s standard layout approach and enhance it considerably. Web developers familiar with CSS and tools such as Twitter’s Boostrap will recognize the paradigm as well.
 
