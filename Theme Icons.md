@@ -6,7 +6,7 @@ The upcoming version of CODE Framework WPF has a new ThemeIcon control, which is
 <mvvm:ThemeIcon StandardIcon="Save" />
 ```
 
-So that is kind of cool, because it makes it easier to use the default icons we provide. So instead of always looking the information up on Codeplex (http://codeframework.codeplex.com/wikipage?title=Standard%20Icon%20Resources), the enum guides you to the icons that are available (with a simplified name… so “CODE.Framework-Icon-Save” is just called “Save” in the enum).
+So that is kind of cool, because it makes it easier to use the default icons we provide. So instead of always looking the information up in the documentation (see also: [Standard Icons](Themes---Standard-Icon-Resources) ), the enum guides you to the icons that are available (with a simplified name… so “CODE.Framework-Icon-Save” is just called “Save” in the enum).
 
 The ThemeIcon does a few things for you. For one, it loads the icon in question, and, as the name suggest, it does so in a theme-specific way. So it will always load the right icon for the current theme. But the thing that is really neat about it is that it is aware of themes changing on the fly. So if the user changes the theme, the ThemeIcon control realizes that the theme was switched, and it will unload the old icon, and reload the one for the newly selected theme. So that makes for a nice user experience.
 
