@@ -1,6 +1,6 @@
 ﻿# Understanding Layout
 
-_Note: This document is a work in progress_
+> Note: This document is a work in progress_
 
 CODE Framework’s (optional) layout features drastically improve developer productivity and increase maintainability and reuse in your application. These features build on top of WPF’s standard layout approach and enhance it considerably. Web developers familiar with CSS and tools such as Twitter’s Boostrap will recognize the paradigm as well.
 
@@ -34,7 +34,7 @@ The result works, but it is not very visually pleasing. Using a CODE Framework l
 </l:BidirectionalStackPanel>
 ```
 
-Note: CODE Framework layout containers are defined in the CODE.Framework.Wpf.dll assembly in a namespace called CODE.Framework.Wpf.Layout. I am using this .NET namespace in XAML using the “l” namespace (but you can name it anything you want). If you use tools such as Resharper, they will help you to add the namespace in XAML if it isn’t there already. Otherwise, you have to add this attribute to your root element:
+> Note: CODE Framework layout containers are defined in the CODE.Framework.Wpf.dll assembly in a namespace called CODE.Framework.Wpf.Layout. I am using this .NET namespace in XAML using the “l” namespace (but you can name it anything you want). If you use tools such as Resharper, they will help you to add the namespace in XAML if it isn’t there already. Otherwise, you have to add this attribute to your root element:
 
 ```
 xmlns:l="clr-namespace:CODE.Framework.Wpf.Layout;assembly=CODE.Framework.Wpf"
@@ -122,7 +122,7 @@ So how would you know what name resources exist? Well, you could look into the C
 
 The StandardLayout property is really just a convenience property. When set, the property simply triggers setting of the Style of the element to the resource references in the previous example. 
 
-Note: Many of the CODE Framework layout elements have a standard style equivalent. For instance, the SimpleForm standard layout (which always translates to the CODE.Framework-Layout-SimpleFormLayout resource) refers to the BidirectionalStackPanel element. Note however that this is not always an exact match (which is also why the names are slightly different). Most themes will decide that simple forms are to be implemented as bidirectional stack panels, but some themes may choose a different layout element. Also, themes will choose to set various properties on layout elements to non-standard settings, rather than always just going with the defaults, so that is another difference from just using the layout element directly.
+> Note: Many of the CODE Framework layout elements have a standard style equivalent. For instance, the SimpleForm standard layout (which always translates to the CODE.Framework-Layout-SimpleFormLayout resource) refers to the BidirectionalStackPanel element. Note however that this is not always an exact match (which is also why the names are slightly different). Most themes will decide that simple forms are to be implemented as bidirectional stack panels, but some themes may choose a different layout element. Also, themes will choose to set various properties on layout elements to non-standard settings, rather than always just going with the defaults, so that is another difference from just using the layout element directly.
 
 The use of the View object is entirely optional, but it sure is convenient. Most people like using this object and we thus make this the default root element of UI definitions. Therefore, if all you wanted in your UI was these three elements, you could go with the following:
 
@@ -189,7 +189,7 @@ The end result of all this is that the following code results in the display sho
 </mvvm:View>
 ```
 
-Note: Remember that setting the StandardLaytout property is really just a simplified way to reference the style we changed.
+> Note: Remember that setting the StandardLaytout property is really just a simplified way to reference the style we changed.
 
 ![](Understanding%20Layout/Figure02.png)
 
@@ -237,7 +237,7 @@ This layout approach can be referenced in the following ways:
 * Style key: **CODE.Framework-Layout-SimpleFormLayout** and **CODE.Framework-Layout-SimpleFormToFillLayout**
 * Standard layout: **SimpleForm** and **SimpleFormToFill**
 
-Note: As for all layout elements, the style resource (and the standard layout reference} typically uses this layout element, but there may be differences in some themes.
+> Note: As for all layout elements, the style resource (and the standard layout reference} typically uses this layout element, but there may be differences in some themes.
 
 The basic use of this layout element is the following:
 
@@ -367,12 +367,11 @@ This is really the same as this:
 Note that the advantage of the prior approach is that it is based on a style that can be tweaked and generically maintained and changed, while the second version is always hardcoded to use a Grid.
 
 ### Multi Panel Layouts
-| | |
-| - | - |
-| Element name | **MultiPanel** |
-| XAML namespace declaration | clr-namespace:CODE.Framework.Wpf.Layout;assembly=CODE.Framework.Wpf |
-| Style key | **CODE.Framework-Layout-MultiPanelLayout**, **CODE.Framework-Layout-MultiPanelWithHeaderLayout** |
-| Standard layout | **MultiPanel**, **MultiPanelWithHeaders** |
+
+* Element name:  **MultiPanel**
+* XAML namespace declaration: clr-namespace:CODE.Framework.Wpf.Layout;assembly=CODE.Framework.Wpf
+* Style key: **CODE.Framework-Layout-MultiPanelLayout**, **CODE.Framework-Layout-MultiPanelWithHeaderLayout** 
+* Standard layout: **MultiPanel**, **MultiPanelWithHeaders**
 
 Multi panel layouts arrange child elements as proportional panels inside of the main layout element. This is useful in scenarios where you want the available space within an element (often the entire view) to be split (horizontal or vertical) between however many child elements are visible. Optionally, each individual sub-element can be shown with a customizable (and stylable) header. This is definitely easier to show than explain, so take a look at Figure 9 for an example.
 
@@ -380,7 +379,7 @@ Multi panel layouts arrange child elements as proportional panels inside of the 
 
 Figure 9: A multi-panel form with 3 panels (the colored rectangles serve as simple placeholders for more advanced contained UIs) and panel headers.
 
-Note: Multi panel UIs can often be used interchangeably with tabbed UIs (see below). A multi panel UI can be thought of as a tab control with multiple “tabs” visible at the same time. Another possible alternative are “blades” (see below), which are somewhat similar to the multi panel approach, except the size-strategy for the contained elements uses the exact opposite approach (rather than splitting the space and assigning sizes to the individual elements, the size of blades is driven by the child elements).
+> Note: Multi panel UIs can often be used interchangeably with tabbed UIs (see below). A multi panel UI can be thought of as a tab control with multiple “tabs” visible at the same time. Another possible alternative are “blades” (see below), which are somewhat similar to the multi panel approach, except the size-strategy for the contained elements uses the exact opposite approach (rather than splitting the space and assigning sizes to the individual elements, the size of blades is driven by the child elements).
 
 The simplest version of a MultiPanel layout, simply takes all contained (and visible) child elements, and splits the available space between them. Consider this example:
 
@@ -791,7 +790,7 @@ The second group has some interesting arrangements of elements within itself. Th
 
 As you can see, the combination of all these controls gives us the ability to lay out a very advanced property sheet. And by the way: Remember all the attached View properties we encountered here (such as FlowsWIthPrevious), because those (and others) are used in even more complex scenarios, and we will meet them again in examples further below in this article.
 
-Note: The property sheet is not considered a “standard CODE Framework layout”, and thus doesn’t have a predefined style and not StandardForm setting in the View object. This is not the only such element in CODE Framework, but it is relatively important (and may be elevated to standard layout status once all themes feature a default style for it), so I am mentioning it here anyway.
+> Note: The property sheet is not considered a “standard CODE Framework layout”, and thus doesn’t have a predefined style and not StandardForm setting in the View object. This is not the only such element in CODE Framework, but it is relatively important (and may be elevated to standard layout status once all themes feature a default style for it), so I am mentioning it here anyway.
 
 ### Edit Form UIs
 
@@ -819,7 +818,7 @@ Figure 26: The most basic layout pattern of an EditForm: Text labels followed by
 
 This trivial example shows a few important concepts: For one, the EditForm container is smart enough to figure out which child elements are labels, and which are the “controls”. (The element on the left is always considered the “label” and the one on the right is considered the “edit control”, regardless of what actual type of element they are). Typically, this is done by making pairs of elements, but there are ways to change that (see below). Then, all the label elements are measured to see how wide they are. This then allows laying out all the controls in a fashion where all the labels and all the edit controls line up. 
 
-Note: the controls on the left-hand side of Figure 26 all have a specified hardcoded pixel width. It is better to set a more abstract width that grows and shrinks with font sizes and other factors. This can be done by setting the View.WidthEx attached property instead of the intrinsic Width property.
+> Note: the controls on the left-hand side of Figure 26 all have a specified hardcoded pixel width. It is better to set a more abstract width that grows and shrinks with font sizes and other factors. This can be done by setting the View.WidthEx attached property instead of the intrinsic Width property.
 
 Of course, most edit form layouts are far more complex than this first example. Consider Figure 27 for a more advanced layout. In this example, the controls are arranged in groups (with displayed group headers). There also are two columns of control groups. Furthermore, the layout of the individual control “pairs” is now taken to the next level (and in fact demonstrates the ability to go beyond a simple pairings). For instance, there is a button to the right of the textbox after the “Company Name” label. Similarly, there are three textboxes for country, state, and ZIP code, all arranged to the right of a single label. On the opposite end of the spectrum, there is the “stand-alone” textbox for a second street below the first Street/textbox pairs. 
 
