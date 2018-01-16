@@ -72,9 +72,7 @@ public class CustomerQuickInformation : StandardViewModel
 
 Note there this loads the brush and assigns it internally to Image1. There are equivalent methods for all image and logo properties.
 
-## Side-Note: Other Icons
-
-For a very large selection of additional icon resources (specifically designed for XAML use, but also available as SVG and various bitmap formats such as JPG, PNG,…) check out www.Xamalot.com!
+> **Side-Note: Other Icons**<br/>For a very large selection of additional icon resources (specifically designed for XAML use, but also available as SVG and various bitmap formats such as JPG, PNG,…) check out www.Xamalot.com!
 
 ## List of Supported Icons
 
