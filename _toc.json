@@ -6,7 +6,7 @@
   "requireHttps": true,
   "theme": {
     "standardTheme": "Default",
-    "customeCss": null,
+    "customCss": "_meta/cf.css",
     "customTemplate": null 
   },
   "menu": [
@@ -68,7 +68,8 @@
             },
             {
               "title": "WebApi Service Hosting",
-              "link": "WebApi Service Hosting.md"
+              "link": "WebApi Service Hosting.md",
+              "keywords": "REST, service, WebApi"
             },
             {
               "title": "Using the Service Test Host/Harness",
