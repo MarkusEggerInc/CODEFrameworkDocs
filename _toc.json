@@ -7,7 +7,8 @@
   "theme": {
     "standardTheme": "Default",
     "customCss": "_meta/cf.css",
-    "customTemplate": null 
+    "customTemplate": null,
+    "syntaxTheme": "vs2015"
   },
   "menu": [
     {
