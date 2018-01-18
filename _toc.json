@@ -8,7 +8,7 @@
     "standardTheme": "Default",
     "customCss": "_meta/cf.css",
     "customTemplate": null,
-    "syntaxTheme": "vs2015"
+    "syntaxTheme": "kavadocsdark"
   },
   "menu": [
     {
