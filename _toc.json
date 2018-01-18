@@ -7,7 +7,7 @@
   "theme": {
     "standardTheme": "Default",
     "customCss": null,
-    "syntaxTheme": "kavadocsdark"
+    "syntaxTheme": "kavadocs"
   },
   "menu": [
     {
