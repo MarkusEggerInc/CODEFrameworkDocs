@@ -989,3 +989,7 @@ In addition to these EditForm properties, the control also respects the followin
 * **View.LabelFontWeight**: Font weight of the label. Only applies if the View.Label property is set.
 * **View.LabelForegroundBrush**: Foreground brush for the label. Only applies if the View.Label property is set.
 * **View.WidthEx**: Can be used to set the width of an element in a way that is relative to the current font size. (1 = fits about the width of an average character	)
+
+### Flow Form UIs
+
+> To be completed...
