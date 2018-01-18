@@ -6,7 +6,7 @@
   "requireHttps": true,
   "theme": {
     "standardTheme": "Default",
-    "customCss": "_meta/cf.css",
+    "customCss": null,
     "customTemplate": null,
     "syntaxTheme": "kavadocsdark"
   },
