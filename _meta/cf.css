@@ -1,4 +1,5 @@
 .header {
+    background-color: rgb(226, 50, 56);
     background-color: rgba(226, 50, 56, 0.5);
 }
 
@@ -12,6 +13,7 @@
 
 .toc {
     top: 140px;
+    background: #efefef;
 }
 
 .content-container {
