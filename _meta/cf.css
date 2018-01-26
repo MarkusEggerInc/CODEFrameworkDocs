@@ -1,6 +1,5 @@
 .header {
     background-color: rgb(226, 50, 56);
-    background-color: rgba(226, 50, 56, 0.25);
     height: 140px;
 }
 
@@ -30,6 +29,11 @@
     }
 
 blockquote {
+    border-left-color: rgb(226, 50, 56);
+    background-color: rgba(226, 50, 56, .05);
+}
+
+li.kava-auto-link {
     border-left-color: rgb(226, 50, 56);
     background-color: rgba(226, 50, 56, .05);
 }
