@@ -32,3 +32,10 @@ blockquote {
     border-left-color: rgb(226, 50, 56);
     background-color: rgba(226, 50, 56, .05);
 }
+
+.selectedTopic>a:link {
+    color: rgb(226, 50, 56);
+}
+.selectedTopic>a:visited {
+    color: rgb(226, 50, 56);
+}
