@@ -1,3 +1,19 @@
 .header {
-    background-color: red;
+    background-color: rgba(226, 50, 56, 0.5);
+}
+
+    .header .logo {
+        margin: 30px 0 0 10px;
+    }
+
+.sidebar {
+    top: 150px;
+}
+
+.toc {
+    top: 140px;
+}
+
+.content-container {
+    padding-top: 140px;
 }
