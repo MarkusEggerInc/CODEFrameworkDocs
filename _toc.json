@@ -6,7 +6,7 @@
   "requireHttps": true,
   "theme": {
     "standardTheme": "Default",
-    "customCss": null,
+    "customCss": "_meta/cf.css",
     "syntaxTheme": "kavadocs"
   },
   "menu": [
