@@ -1,6 +1,7 @@
 .header {
     background-color: rgb(226, 50, 56);
     background-color: rgba(226, 50, 56, 0.25);
+    height: 140px;
 }
 
     .header .logo {
@@ -8,11 +9,11 @@
     }
 
 .sidebar {
-    top: 150px;
+    top: 160px;
 }
 
 .toc {
-    top: 140px;
+    top: 145px;
     background: #efefef;
 }
 
