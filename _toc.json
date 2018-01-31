@@ -60,6 +60,10 @@
           "link": "Understanding Services.md"
         },
         {
+          "title": "WCF Service Configuration",
+          "link": "WCF Service Configuration.md"
+        },
+        {
           "title": "Services: Server-Side Hosting",
           "topics": [
             {
@@ -102,11 +106,11 @@
           "topics": [
             {
               "title": "Calling REST Services through ServiceClient",
-              "link": "Calling%20REST%20Services%20through%20ServiceClient.md"
+              "link": "Calling REST Services through ServiceClient.md"
             },
             {
               "title": "ServiceClient Events",
-              "link": "ServiceClient%20Events.md"
+              "link": "ServiceClient Events.md"
             }
           ]
         }
@@ -120,11 +124,11 @@
           "topics": [
             {
               "title": "Bind, Security, and Input Validation",
-              "link": "Bind%2C%20Security%2C%20and%20Input%20Validation.md"
+              "link": "Bind-Security-and-Input-Validation.md"
             },
             {
               "title": "Binding to Enums",
-              "link": "Binding%20to%20Enums.md"
+              "link": "Binding to Enums.md"
             }
           ]
         },
@@ -133,7 +137,7 @@
           "topics": [
             {
               "title": "Auto-Complete UIs",
-              "link": "Auto-Complete%20in%20WPF%20UIs.md"
+              "link": "Auto-Complete in WPF UIs.md"
             },
             {
               "title": "Caps-Lock Warning (and Global Key Handlers)",
@@ -179,7 +183,11 @@
             {
               "title": "Text Boxes - Input Masks",
               "link": "TextBox Input Masks.md"
-            }          
+            },
+            {
+              "title": "TouchEx and Scroll Bars",
+              "link": "TouchEx and Scroll Bars.md"
+            }
           ]
         },
         {
@@ -257,12 +265,12 @@
           "topics": [
             {
               "title": "Async Worker",
-              "link": "CODE%20Framework%20AsyncWorker.md",
+              "link": "CODE Framework AsyncWorker.md",
               "seeAlso": "Async Worker - Part 2"
             },
             {
               "title": "Async Worker - Part 2",
-              "link": "AsyncWorker%20Part%202.md",
+              "link": "AsyncWorker Part 2.md",
               "seeAlso": "Async Worker"
             },
             {
@@ -271,11 +279,11 @@
             },
             {
               "title": "Standard Views and View-Models",
-              "link": "Standard%20Views%20and%20View%20Models.md"
+              "link": "Standard Views and View Models.md"
             },
             {
               "title": "Standard View-Models Tips",
-              "link": "StandardViewModel%20Tips.md"
+              "link": "StandardViewModel Tips.md"
             }
           ]
         },
@@ -301,6 +309,10 @@
             {
               "title": "Using the View Visualizer",
               "link": "Using the View-Visualizer.md"
+            },
+            {
+                "title": "Local Views",
+                "link": "Local Views in WPF.md"
             }
           ]
         },
@@ -309,15 +321,15 @@
           "topics": [
             {
               "title": "Accessing the Shell Object",
-              "link": "Accessing%20the%20Shell%20object.md"
+              "link": "Accessing the Shell object.md"
             },
             {
               "title": "Activating Existing/Loaded Views",
-              "link": "Activating%20Existing%20Views.md"
+              "link": "Activating Existing Views.md"
             },
             {
               "title": "Configuration System",
-              "link": "CODE%20Framework%20Configuration%20System.md"
+              "link": "CODE Framework Configuration System.md"
             },
             {
               "title": "Hooking Events with Commands",
@@ -329,7 +341,7 @@
             },
             {
               "title": "Notifications",
-              "link": "WPF%20MVVM_MVC%20Notifications.md"
+              "link": "WPF MVVM_MVC Notifications.md"
             },
             {
               "title": "Observable Collection Helper",
@@ -338,7 +350,7 @@
             },
             {
               "title": "Resource Dictionary Loading",
-              "link": "WPF%20Resource%20Dictionary%20Loading.md"
+              "link": "WPF Resource Dictionary Loading.md"
             },
             {
               "title": "Splitting WPF Apps into Multiple Projects",
@@ -350,7 +362,7 @@
             },
             {
               "title": "WPF ImageHelper",
-              "link": "WPF%20ImageHelper.md"
+              "link": "WPF ImageHelper.md"
             },
             {
               "title": "View-Actions - CanExecute",
